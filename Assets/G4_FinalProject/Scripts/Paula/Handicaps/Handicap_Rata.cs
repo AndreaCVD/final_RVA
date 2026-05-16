@@ -7,13 +7,13 @@ public class Handicap_Rata : MonoBehaviour, IHandicap
     private bool resolved = false;
     public bool IsResolved => resolved;
 
-    [Header("Moviment")]
+    [Header("Movement")]
     [SerializeField] private float moveSpeed = 1.5f;
     [SerializeField] private float waitTimeAtWaypoint = 1f;
     [SerializeField] private Vector3 roamAreaCenter;
     [SerializeField] private Vector3 roamAreaSize = new Vector3(4f, 0.5f, 3f);
 
-    [Header("Resoluci�")]
+    [Header("Resolved")]
     [SerializeField] private string trashTag = "Trash";
     [SerializeField] private string windowTag = "Window";
 

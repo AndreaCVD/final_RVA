@@ -7,8 +7,8 @@ public class RatHandicap : MonoBehaviour, IHandicap
     public bool is_resolved => resolved;
 
     [Header("Movement")]
-    [SerializeField] private float move_speed = 5f;          // molt més ràpida
-    [SerializeField] private float direction_change_interval = 0.2f; // canvia direcció cada 0.2 segons
+    [SerializeField] private float move_speed = 5f;
+    [SerializeField] private float direction_change_interval = 0.2f;
     [SerializeField] private Vector3 roam_area_center;
     [SerializeField] private Vector3 roam_area_size = new Vector3(4f, 0.5f, 3f);
 
@@ -46,7 +46,6 @@ public class RatHandicap : MonoBehaviour, IHandicap
     {
         if (resolved || is_grabbed) return;
 
-        // Canvi aleatori de direcció cada interval (molt freqüent)
         if (Time.time >= next_direction_change_time)
         {
             SetRandomDirection();
@@ -54,18 +53,16 @@ public class RatHandicap : MonoBehaviour, IHandicap
         }
 
         Vector3 new_pos = transform.position + current_direction * move_speed * Time.deltaTime;
-        new_pos = BounceInsideArea(new_pos);   // rebota en comptes de clampar
+        new_pos = BounceInsideArea(new_pos);
         transform.position = new_pos;
     }
 
-    // Direcció aleatòria horitzontal (X,Z), normalitzada
     private void SetRandomDirection()
     {
         float angle = Random.Range(0f, 360f) * Mathf.Deg2Rad;
         current_direction = new Vector3(Mathf.Cos(angle), 0, Mathf.Sin(angle)).normalized;
     }
 
-    // Posició inicial aleatòria dins l'àrea
     private void SetRandomPosition()
     {
         float x = Random.Range(roam_area_center.x - roam_area_size.x / 2, roam_area_center.x + roam_area_size.x / 2);
@@ -73,7 +70,6 @@ public class RatHandicap : MonoBehaviour, IHandicap
         transform.position = new Vector3(x, roam_area_center.y, z);
     }
 
-    // Funció de rebot: si la rata surt dels límits, la reposiciona a dins i canvia la direcció
     private Vector3 BounceInsideArea(Vector3 pos)
     {
         Vector3 new_pos = pos;
@@ -108,11 +104,9 @@ public class RatHandicap : MonoBehaviour, IHandicap
             bounced = true;
         }
 
-        // Si ha tocat un límit, normalitzem la direcció per mantenir velocitat constant
         if (bounced)
         {
             current_direction.Normalize();
-            // Opcional: tornar a canviar l'interval per fer-la més caòtica
             next_direction_change_time = Time.time + direction_change_interval * 0.5f;
         }
 
@@ -134,7 +128,8 @@ public class RatHandicap : MonoBehaviour, IHandicap
     private void OnTriggerEnter(Collider other)
     {
         if (resolved) return;
-        if (other.CompareTag(trash_tag) || other.CompareTag(window_tag))
+        // 🚨 NOMÉS si la rata està agafada i toca la zona de resolució
+        if (is_grabbed && (other.CompareTag(trash_tag) || other.CompareTag(window_tag)))
         {
             Resolve();
         }

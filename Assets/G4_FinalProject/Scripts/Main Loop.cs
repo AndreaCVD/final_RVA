@@ -4,9 +4,9 @@ using UnityEngine.SceneManagement;
 
 public class MainLoop : MonoBehaviour
 {
-    AudioManager audio_manager;
+    [SerializeField] AudioManager audio_manager;
 
-
+    public bool telephone_grabed;
     public bool dialog_started;
     public bool dialog_finished;
     public bool day_started;
@@ -15,13 +15,13 @@ public class MainLoop : MonoBehaviour
     void Start()
     {
 
-        audio_manager = this.GetComponent<AudioManager>();
-
+        //audio_manager = this.GetComponent<AudioManager>();
+        telephone_grabed = false;
         dialog_started = false;
         dialog_finished = false;
         day_started = false;
 
-
+        Invoke(nameof(RingTelephone), 3f);
     }
 
     // Update is called once per frame
@@ -29,22 +29,19 @@ public class MainLoop : MonoBehaviour
     {
 
 
-        if (!dialog_started && !day_started)
+        if (telephone_grabed)
         {        
-            day_started=true;
-            Wait_and_Start(5f);        
-        }
-        else if (!dialog_started)//empieza el juego y esperamos 5 seundos para que suene el telefono
-        {
+            
             dialog_started = true;
             TelefonDialog();
         }
+
         
         if (!dialog_finished)
         {
             //esperemos a que el dialogo acabe
         }
-        else if (!day_started & dialog_finished) //Dialog is over
+        else if (dialog_finished) //Dialog is over
         {
             day_started = true;
         }
@@ -75,6 +72,10 @@ public class MainLoop : MonoBehaviour
         StartCoroutine(Dialog_Finished(duration));
 
     }
+    void RingTelephone ()
+    {
+        audio_manager.RingTel();
+    }
     IEnumerator Wait_and_Continue(float time)
     {
         yield return new WaitForSeconds(time);
@@ -89,5 +90,11 @@ public class MainLoop : MonoBehaviour
     {
         yield return new WaitForSeconds(time/2);
         dialog_finished = true;
+    }
+    public void Telephone()
+    {
+        telephone_grabed = true;
+        Debug.Log("Se ha cojido el telefono");
+
     }
 }

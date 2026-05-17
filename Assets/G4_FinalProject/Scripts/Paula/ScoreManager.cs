@@ -2,21 +2,21 @@ using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
-    public static ScoreManager Instance;
-    private int totalPoints = 0;
+    public static ScoreManager instance;
+    private int total_points = 0;
 
     private void Awake()
     {
-        if (Instance == null) Instance = this;
+        if (instance == null) instance = this;
         else Destroy(gameObject);
     }
 
     public void AddPoints(int points)
     {
-        totalPoints += points;
-        Debug.Log($"Points added: +{points}. Total: {totalPoints}");
+        total_points += points;
+        Debug.Log($"Points added: +{points}. Total: {total_points}");
     }
 
-    public int GetTotalPoints() => totalPoints;
-    public void ResetPoints() => totalPoints = 0;
+    public int GetTotalPoints() => total_points;
+    public void ResetPoints() => total_points = 0;
 }

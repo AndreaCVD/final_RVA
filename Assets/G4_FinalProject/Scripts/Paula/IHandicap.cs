@@ -1,5 +1,5 @@
 public interface IHandicap
 {
-    bool IsResolved { get; }
+    bool is_resolved { get; }
     void Resolve();
 }

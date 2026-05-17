@@ -3,90 +3,84 @@ using UnityEngine;
 
 public class HandicapManager : MonoBehaviour
 {
-    public static HandicapManager Instance;
+    public static HandicapManager instance;
 
     [Header("Handicap Prefabs")]
-    [SerializeField] private GameObject[] handicapPrefabs;
+    [SerializeField] private GameObject[] handicap_prefabs;
 
-    [Header("Spawn Area (dins del foodtruck)")]
-    [SerializeField] private Vector3 spawnAreaCenter = Vector3.zero;
-    [SerializeField] private Vector3 spawnAreaSize = new Vector3(4f, 1f, 3f);
+    [Header("Spawn Area (inside food truck)")]
+    [SerializeField] private Vector3 spawn_area_center = Vector3.zero;
+    [SerializeField] private Vector3 spawn_area_size = new Vector3(4f, 1f, 3f);
 
-    [Header("Penalització per handicap no resolt")]
-    [SerializeField] private int penaltyPerUnresolvedHandicap = 20; // restarà 20 punts per cada handicap no resolt
+    [Header("Penalty per unresolved handicap")]
+    [SerializeField] private int penalty_per_unresolved = 20;
 
-    private List<IHandicap> activeHandicaps = new List<IHandicap>();
+    private List<IHandicap> active_handicaps = new List<IHandicap>();
 
     private void Awake()
     {
-        if (Instance == null) Instance = this;
+        if (instance == null) instance = this;
         else Destroy(gameObject);
     }
 
-    // Cridat per l'Andrea (o qui sigui) per generar un handicap
     public void SpawnRandomHandicap()
     {
-        if (handicapPrefabs == null || handicapPrefabs.Length == 0)
+        if (handicap_prefabs == null || handicap_prefabs.Length == 0)
         {
-            Debug.LogWarning("No handicap prefabs assignats.");
+            Debug.LogWarning("No handicap prefabs assigned.");
             return;
         }
 
-        int idx = Random.Range(0, handicapPrefabs.Length);
-        Vector3 pos = spawnAreaCenter + new Vector3(
-            Random.Range(-spawnAreaSize.x / 2, spawnAreaSize.x / 2),
-            Random.Range(0, spawnAreaSize.y),
-            Random.Range(-spawnAreaSize.z / 2, spawnAreaSize.z / 2)
+        int idx = Random.Range(0, handicap_prefabs.Length);
+        Vector3 pos = spawn_area_center + new Vector3(
+            Random.Range(-spawn_area_size.x / 2, spawn_area_size.x / 2),
+            Random.Range(0, spawn_area_size.y),
+            Random.Range(-spawn_area_size.z / 2, spawn_area_size.z / 2)
         );
 
-        GameObject go = Instantiate(handicapPrefabs[idx], pos, Quaternion.identity);
+        GameObject go = Instantiate(handicap_prefabs[idx], pos, Quaternion.identity);
         IHandicap h = go.GetComponent<IHandicap>();
         if (h != null)
         {
-            activeHandicaps.Add(h);
+            active_handicaps.Add(h);
             Debug.Log($"Handicap spawned: {go.name}");
         }
         else
         {
-            Debug.LogError("El prefab no té IHandicap. S'ha destruït.");
+            Debug.LogError("Prefab does not have IHandicap. Destroyed.");
             Destroy(go);
         }
     }
 
-    // Cridat per l'Andrea quan entrega la pizza. pointsEarned ja inclou penalització per ingredients (0-100)
-    public void OnOrderDelivered(int pointsEarned)
+    public void OnOrderDelivered(int points_earned)
     {
-        int finalPoints = pointsEarned;
+        int final_points = points_earned;
 
-        // Restar punts per cada handicap actiu NO resolt
-        int unresolvedCount = 0;
-        foreach (IHandicap handicap in activeHandicaps)
+        int unresolved_count = 0;
+        foreach (IHandicap handicap in active_handicaps)
         {
-            if (!handicap.IsResolved)
+            if (!handicap.is_resolved)
             {
-                finalPoints -= penaltyPerUnresolvedHandicap;
-                unresolvedCount++;
+                final_points -= penalty_per_unresolved;
+                unresolved_count++;
             }
         }
 
-        if (unresolvedCount > 0)
-            Debug.Log($"S'han restat {unresolvedCount * penaltyPerUnresolvedHandicap} punts per handicaps no resolts.");
+        if (unresolved_count > 0)
+            Debug.Log($"Subtracted {unresolved_count * penalty_per_unresolved} points for unresolved handicaps.");
 
-        if (finalPoints < 0) finalPoints = 0;
+        if (final_points < 0) final_points = 0;
 
-        ScoreManager.Instance.AddPoints(finalPoints);
-
-        // Netejar handicaps que s'hagin resolt (per si de cas)
-        activeHandicaps.RemoveAll(h => h.IsResolved);
+        ScoreManager.instance.AddPoints(final_points);
+        active_handicaps.RemoveAll(h => h.is_resolved);
     }
 
-    // Cridat des del mateix handicap quan es resol
     public void RemoveHandicap(IHandicap h)
     {
-        if (activeHandicaps.Contains(h))
+        if (active_handicaps.Contains(h))
         {
-            activeHandicaps.Remove(h);
-            Debug.Log("Handicap resolt i eliminat de la llista.");
+            active_handicaps.Remove(h);
+            Debug.Log("Handicap resolved and removed from list.");
         }
     }
 }

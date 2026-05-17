@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 355299346}
   - component: {fileID: 355299345}
   - component: {fileID: 355299344}
+  - component: {fileID: 355299347}
   m_Layer: 0
   m_Name: --Audio--
   m_TagString: Untagged
@@ -265,6 +266,14 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!81 &355299347
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 355299343}
+  m_Enabled: 1
 --- !u!1 &427313398
 GameObject:
   m_ObjectHideFlags: 0
@@ -348,13 +357,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1447281974}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 1447281977}
+        m_TargetAssemblyTypeName: MainLoop, Assembly-CSharp
+        m_MethodName: Telephone
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -635,7 +644,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5721719840037127917, guid: 263cec7e07f0f564d95acb94a1de2f12, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6051467600681310450, guid: 263cec7e07f0f564d95acb94a1de2f12, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1188,11 +1197,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6957000769822834732, guid: 3ff9f50d1b0d1fa4f96b849e64c9c84a, type: 3}
   m_PrefabInstance: {fileID: 1421164298}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1447281974 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2428006657595017995, guid: 92889bf45b8c2e445a35cea73b4a4134, type: 3}
+--- !u!114 &1447281977 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8908006898969885072, guid: 92889bf45b8c2e445a35cea73b4a4134, type: 3}
   m_PrefabInstance: {fileID: 8912878313020517622}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 918afcff71737e0439fba849b9b51d3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1552201424
 GameObject:
   m_ObjectHideFlags: 0

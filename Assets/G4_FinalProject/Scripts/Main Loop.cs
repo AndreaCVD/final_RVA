@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class MainLoop : MonoBehaviour
 {
     [SerializeField] AudioManager audio_manager;
-
+    [SerializeField] Time time;
     public bool telephone_grabed;
     public bool dialog_started;
     public bool dialog_finished;
@@ -27,16 +27,15 @@ public class MainLoop : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-
-
-        if (telephone_grabed)
+        //Cuando el telefono se coja:
+            // 1. El dialogo empieza
+            // 2. Cambiar el audio
+        if (telephone_grabed && !dialog_started)
         {        
-            
             dialog_started = true;
             TelefonDialog();
         }
 
-        
         if (!dialog_finished)
         {
             //esperemos a que el dialogo acabe
@@ -44,12 +43,24 @@ public class MainLoop : MonoBehaviour
         else if (dialog_finished) //Dialog is over
         {
             day_started = true;
+            time.StartDay();
         }
+
+        //---------------------------
+        if (time.IsTimeOver() == false)
+        {
+            //El juego continua
+        }
+        else
+        {
+            //El tiempo ha acabado
+            Debug.Log("Time is Over");
+
+        }
+
     }
     private void TelefonDialog()
     {
-        Debug.Log("EMPIEZA DIALOGO");
-
         dialog_started = true;
         float duration;
 
@@ -60,7 +71,7 @@ public class MainLoop : MonoBehaviour
                 Debug.Log("Estamos en escena: " + active_scene.name);
                 audio_manager.StartDialog(0);
                 duration = audio_manager.ReturnDuration(0);
-                Debug.Log("Duracion = " + duration);
+                //Debug.Log("Duracion = " + duration);
 
                 break;
             default:
@@ -80,16 +91,11 @@ public class MainLoop : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
     }
-    IEnumerator Wait_and_Start(float time)
-    {
-        yield return new WaitForSeconds(time);
-        // Código que se ejecuta después del retraso
-        dialog_started = true;
-    }
     IEnumerator Dialog_Finished(float time)
     {
-        yield return new WaitForSeconds(time/2);
+        yield return new WaitForSeconds(time);
         dialog_finished = true;
+        Debug.Log("El dialogo ha terminado");
     }
     public void Telephone()
     {

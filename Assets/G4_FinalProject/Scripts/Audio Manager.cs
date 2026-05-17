@@ -19,6 +19,10 @@ public class AudioManager : MonoBehaviour
     public void StartDialog(int x)
     {
         audioSource.clip = Dialogs[x];
+        if (audioSource.loop == true)
+        {
+            audioSource.loop = false;
+        }
         audioSource.Play();
     }
 

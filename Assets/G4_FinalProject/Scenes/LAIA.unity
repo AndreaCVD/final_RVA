@@ -8007,7 +8007,7 @@ ParticleSystem:
   CollisionModule:
     enabled: 1
     serializedVersion: 4
-    type: 0
+    type: 1
     collisionMode: 0
     colliderForce: 0
     multiplyColliderForceByParticleSize: 0
@@ -12093,6 +12093,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   materialConSalsa: {fileID: 2100000, guid: 0c7a6c57510c180408a4083785f54dae, type: 2}
+  rendererPizza: {fileID: 1321904086}
 --- !u!1 &1360941021
 GameObject:
   m_ObjectHideFlags: 0
@@ -14476,13 +14477,14 @@ GameObject:
   - component: {fileID: 1805351377}
   - component: {fileID: 1805351380}
   - component: {fileID: 1805351381}
+  - component: {fileID: 1805351382}
   m_Layer: 0
   m_Name: PizzaSocket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1805351377
 Transform:
   m_ObjectHideFlags: 0
@@ -14532,6 +14534,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredients: []
+--- !u!114 &1805351382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1805351374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a612617927129824ca187f8562fee696, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  materialConSalsa: {fileID: 2100000, guid: 0c7a6c57510c180408a4083785f54dae, type: 2}
+  rendererPizza: {fileID: 1321904086}
 --- !u!1 &1863207996
 GameObject:
   m_ObjectHideFlags: 0

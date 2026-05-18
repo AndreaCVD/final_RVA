@@ -3,7 +3,7 @@ using UnityEngine;
 public class PizzaSalsa : MonoBehaviour
 {
     public Material materialConSalsa;
-    private Renderer rendererPizza;
+    public Renderer rendererPizza;
     private bool tieneSalsa = false;
 
     void Start()

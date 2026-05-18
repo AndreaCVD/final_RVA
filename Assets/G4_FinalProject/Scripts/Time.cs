@@ -12,16 +12,23 @@ public class Time : MonoBehaviour
     public float cuenta_atras = 100f;
     public float MAX_cuenta = 100f;
     public bool time_finished;
-
+    public bool day_started;
     private void Start()
     {
+        barra_contador.fillAmount = cuenta_atras / MAX_cuenta;
+
+        day_started = false;
         time_finished = false;
     }
     void FixedUpdate()
     {
-        Invoke(nameof(StartDay), 1f); //Every second is called
+        if (day_started && !time_finished)
+        {
+            Invoke(nameof(Countdown), 1f); //Every second is called
+        }
+
     }
-    public void StartDay()
+    public void Countdown()
     {
         if (cuenta_atras > 0)
         {
@@ -33,6 +40,10 @@ public class Time : MonoBehaviour
             time_finished = true;
         }
 
+    }
+    public void StartDay()
+    {
+        day_started = true;
     }
     public bool IsTimeOver()
     {

@@ -46,7 +46,8 @@ public class MainLoop : MonoBehaviour
             time.StartDay();
         }
 
-        //---------------------------
+        //-------------------------------------------------
+
         if (time.IsTimeOver() == false)
         {
             //El juego continua

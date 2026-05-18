@@ -11,6 +11,7 @@ TagManager:
   - Water
   - Ingredient
   - CanSauce
+  - Pizza
   layers:
   - Default
   - TransparentFX

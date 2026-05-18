@@ -673,7 +673,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &129905223
 Transform:
   m_ObjectHideFlags: 0
@@ -683,7 +683,7 @@ Transform:
   m_GameObject: {fileID: 129905222}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.9262121, y: 0, z: 0}
+  m_LocalPosition: {x: 1.9262121, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2250,7 +2250,7 @@ Transform:
   m_GameObject: {fileID: 371727726}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.9262121, y: 0, z: 0}
+  m_LocalPosition: {x: 1.9262121, y: 0, z: 2.68}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4320,6 +4320,7 @@ GameObject:
   - component: {fileID: 773487346}
   - component: {fileID: 773487348}
   - component: {fileID: 773487347}
+  - component: {fileID: 773487349}
   m_Layer: 0
   m_Name: TomatoeSauce
   m_TagString: CanSauce
@@ -9142,6 +9143,19 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!114 &773487349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 773487345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a612617927129824ca187f8562fee696, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  materialConSalsa: {fileID: 2100000, guid: 0c7a6c57510c180408a4083785f54dae, type: 2}
 --- !u!1001 &782107647
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11826,7 +11840,6 @@ GameObject:
   - component: {fileID: 1321904091}
   - component: {fileID: 1321904090}
   - component: {fileID: 1321904089}
-  - component: {fileID: 1321904092}
   m_Layer: 0
   m_Name: PizzaBase
   m_TagString: Untagged
@@ -12051,8 +12064,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.1592872, y: 2.366152, z: 1.0000002}
-  m_Center: {x: -0.07964346, y: 0.097302146, z: -0.00000011920929}
+  m_Size: {x: 1.1592872, y: 1.2918123, z: 1.0000002}
+  m_Center: {x: -0.07964349, y: -0.43986714, z: -0.00000011920929}
 --- !u!54 &1321904091
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -12080,20 +12093,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1321904092
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1321904084}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a612617927129824ca187f8562fee696, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  materialConSalsa: {fileID: 2100000, guid: 0c7a6c57510c180408a4083785f54dae, type: 2}
-  rendererPizza: {fileID: 1321904086}
 --- !u!1 &1360941021
 GameObject:
   m_ObjectHideFlags: 0
@@ -14477,10 +14476,9 @@ GameObject:
   - component: {fileID: 1805351377}
   - component: {fileID: 1805351380}
   - component: {fileID: 1805351381}
-  - component: {fileID: 1805351382}
   m_Layer: 0
   m_Name: PizzaSocket
-  m_TagString: Untagged
+  m_TagString: Pizza
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14519,8 +14517,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 5.247812, y: 0.3950045, z: 5.0014358}
-  m_Center: {x: 15.188582, y: -0.30249834, z: 1.3069345}
+  m_Size: {x: 5.247812, y: 0.14869994, z: 5.0014358}
+  m_Center: {x: 15.188582, y: -0.17934607, z: 1.3069345}
 --- !u!114 &1805351381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14534,20 +14532,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredients: []
---- !u!114 &1805351382
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1805351374}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a612617927129824ca187f8562fee696, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  materialConSalsa: {fileID: 2100000, guid: 0c7a6c57510c180408a4083785f54dae, type: 2}
-  rendererPizza: {fileID: 1321904086}
 --- !u!1 &1863207996
 GameObject:
   m_ObjectHideFlags: 0

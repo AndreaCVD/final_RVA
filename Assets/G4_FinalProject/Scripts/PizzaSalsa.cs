@@ -3,22 +3,23 @@ using UnityEngine;
 public class PizzaSalsa : MonoBehaviour
 {
     public Material materialConSalsa;
-    public Renderer rendererPizza;
-    private bool tieneSalsa = false;
-
-    void Start()
-    {
-        rendererPizza = GetComponent<Renderer>();
-    }
 
     void OnParticleCollision(GameObject other)
     {
-        Debug.Log("DETECTA COLISION PARTICLES");
-        if (!tieneSalsa)
+        Debug.Log("ENTRA");
+        Debug.Log(other);
+        if (!other.CompareTag("Pizza"))
+            return;
+
+        // Intentar conseguir el Renderer del padre, si no, del mismo objeto
+        Renderer rendererPizza = other.transform.parent != null
+            ? other.transform.parent.GetComponent<Renderer>()
+            : other.GetComponent<Renderer>();
+
+        if (rendererPizza != null && materialConSalsa != null)
         {
-            tieneSalsa = true;
             rendererPizza.material = materialConSalsa;
-            Debug.Log("Salsa detectada en la pizza");
+            Debug.Log("Salsa aplicada");
         }
     }
 }

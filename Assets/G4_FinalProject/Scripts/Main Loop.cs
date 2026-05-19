@@ -102,6 +102,13 @@ public class MainLoop : MonoBehaviour
                 //Debug.Log("Duracion = " + duration);
 
                 break;
+            case "ANDREA":
+                Debug.Log("Estamos en escena: " + active_scene.name);
+                audio_manager.StartDialog(0);
+                duration = audio_manager.ReturnDuration(0);
+                //Debug.Log("Duracion = " + duration);
+
+                break;
             default:
                 Debug.Log("No se ha leido bien");
                 duration = 1.2f;

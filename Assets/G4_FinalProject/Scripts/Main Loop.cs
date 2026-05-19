@@ -50,9 +50,10 @@ public class MainLoop : MonoBehaviour
         {
             day_started = true;
 
+            //Llamar evento
             hideScript.HideCube();
 
-            time.StartDay();
+            //time.StartDay();
 
         }
 

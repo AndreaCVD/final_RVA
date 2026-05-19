@@ -80,6 +80,12 @@ public class MainLoop : MonoBehaviour
 
         }
     }
+
+    public void OnDayStart()
+    {
+        Debug.Log("Start Commands");
+    }
+
     private void TelefonDialog()
     {
         dialog_started = true;

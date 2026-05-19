@@ -50,7 +50,7 @@ public class MainLoop : MonoBehaviour
 
             cubeToHide.SetActive(false);
 
-            time.StartDay();
+            //time.StartDay();
 
         }
 

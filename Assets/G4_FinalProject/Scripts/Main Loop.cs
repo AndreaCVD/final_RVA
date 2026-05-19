@@ -10,12 +10,13 @@ public class MainLoop : MonoBehaviour
     public bool dialog_started;
     public bool dialog_finished;
     public bool day_started;
-
+    bool levelChosen;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
 
         //audio_manager = this.GetComponent<AudioManager>();
+        levelChosen = false;
         telephone_grabed = false;
         dialog_started = false;
         dialog_finished = false;
@@ -43,7 +44,8 @@ public class MainLoop : MonoBehaviour
         else if (dialog_finished) //Dialog is over
         {
             day_started = true;
-            time.StartDay();
+            //time.StartDay(); -- LO LLAMA ANDREA AL ABRIR PERSIANA
+
         }
 
         //-------------------------------------------------
@@ -51,14 +53,32 @@ public class MainLoop : MonoBehaviour
         if (time.IsTimeOver() == false)
         {
             //El juego continua
+            if (!levelChosen)
+            {
+                StartDay();
+            }
+
         }
         else
         {
             //El tiempo ha acabado
             Debug.Log("Time is Over");
 
+
         }
 
+    }
+    void StartDay()
+    {
+        //Vemos en que escena estamos
+        Scene active_scene = SceneManager.GetActiveScene();
+        switch (active_scene.name)
+        {
+            case "Nivel_1":
+                //activar escena Andrea
+                break;
+
+        }
     }
     private void TelefonDialog()
     {

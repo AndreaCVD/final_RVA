@@ -2,7 +2,7 @@ using System.Threading;
 using UnityEngine.UI;
 using UnityEngine;
 
-public class Time : MonoBehaviour
+public class GameTimer : MonoBehaviour
 {
     [Header("Canvas")]
     public CanvasGroup grup;

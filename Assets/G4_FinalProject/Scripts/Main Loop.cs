@@ -7,7 +7,7 @@ public class MainLoop : MonoBehaviour
     [SerializeField] private GameObject cubeToHide;
 
     [SerializeField] AudioManager audio_manager;
-    [SerializeField] Time time;
+    [SerializeField] GameTimer _time;
 
     public bool telephone_grabed;
     public bool dialog_started;
@@ -56,7 +56,7 @@ public class MainLoop : MonoBehaviour
 
         //-------------------------------------------------
 
-        if (time.IsTimeOver() == false)
+        if (_time.IsTimeOver() == false)
         {
             //El juego continua
             if (!levelChosen)
@@ -74,7 +74,7 @@ public class MainLoop : MonoBehaviour
         }
 
     }
-    void StartDay()
+    public void StartDay()
     {
         //Vemos en que escena estamos
         Scene active_scene = SceneManager.GetActiveScene();
@@ -85,11 +85,6 @@ public class MainLoop : MonoBehaviour
                 break;
 
         }
-    }
-
-    public void OnDayStart()
-    {
-        Debug.Log("Start Commands");
     }
 
     private void TelefonDialog()

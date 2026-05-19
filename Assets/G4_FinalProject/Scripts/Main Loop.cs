@@ -7,7 +7,7 @@ public class MainLoop : MonoBehaviour
     [SerializeField] private GameObject cubeToHide;
 
     [SerializeField] AudioManager audio_manager;
-    [SerializeField] GameTimer _time;
+    [SerializeField] Timer _time;
 
     public bool telephone_grabed;
     public bool dialog_started;
@@ -125,7 +125,7 @@ public class MainLoop : MonoBehaviour
         dialog_finished = true;
         Debug.Log("El dialogo ha terminado");
     }
-    public void Telephone()
+    public void _Telephone()
     {
         telephone_grabed = true;
         Debug.Log("Se ha cojido el telefono");

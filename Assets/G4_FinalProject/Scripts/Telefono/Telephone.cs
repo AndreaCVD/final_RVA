@@ -19,7 +19,7 @@ public class Telephone : MonoBehaviour
     private void OnGrabbed()
     {
         //El telefono se ha cojido
-        main_loop.Telephone();
+        main_loop._Telephone();
     }
 
     private void OnReleased()

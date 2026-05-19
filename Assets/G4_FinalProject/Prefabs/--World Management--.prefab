@@ -52,6 +52,7 @@ MonoBehaviour:
   cuenta_atras: 100
   MAX_cuenta: 100
   time_finished: 0
+  day_started: 0
 --- !u!114 &8908006898969885072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64,8 +65,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 918afcff71737e0439fba849b9b51d3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cubeToHide: {fileID: 0}
   audio_manager: {fileID: 0}
-  time: {fileID: 0}
+  _time: {fileID: 0}
   telephone_grabed: 0
   dialog_started: 0
   dialog_finished: 0

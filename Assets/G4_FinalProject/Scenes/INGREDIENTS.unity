@@ -15436,8 +15436,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   material5Segundos: {fileID: 2100000, guid: 89fa4c1824d691f42988b7b0571b0d3f, type: 2}
   material10Segundos: {fileID: 2100000, guid: 329a33e6dfeae7d4ea4dfad6534eca3b, type: 2}
-  tiempoMaterial1: 5
-  tiempoMaterial2: 10
+  tiempoMaterial1: 10
+  tiempoMaterial2: 20
 --- !u!65 &1865561729
 BoxCollider:
   m_ObjectHideFlags: 0

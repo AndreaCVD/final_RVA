@@ -11,6 +11,7 @@ public class SalsaController : MonoBehaviour
         tiltScript = GetComponent<OnTilt>();
 
         tiltScript.onBegin.AddListener(ActivarSalsa);
+        //entra a la variable de las particulas Start Size a 0.60. 
         tiltScript.onEnd.AddListener(DesactivarSalsa);
 
         salsaParticles.Stop();

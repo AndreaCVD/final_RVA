@@ -11,6 +11,7 @@ public class PizzaSalsa : MonoBehaviour
         if (!other.CompareTag("Pizza"))
             return;
 
+        Debug.Log("PIZZA");
         // Intentar conseguir el Renderer del padre, si no, del mismo objeto
         Renderer rendererPizza = other.transform.parent != null
             ? other.transform.parent.GetComponent<Renderer>()

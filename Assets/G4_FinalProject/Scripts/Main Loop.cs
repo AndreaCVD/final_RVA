@@ -4,12 +4,10 @@ using UnityEngine.SceneManagement;
 
 public class MainLoop : MonoBehaviour
 {
-    [SerializeField] private HideOnAnimationEnd hideScript;
+    [SerializeField] private GameObject cubeToHide;
 
     [SerializeField] AudioManager audio_manager;
     [SerializeField] Time time;
-
-    [SerializeField] private GameObject cubeToHide;
 
     public bool telephone_grabed;
     public bool dialog_started;
@@ -50,7 +48,7 @@ public class MainLoop : MonoBehaviour
         {
             day_started = true;
 
-            hideScript.HideCube();
+            cubeToHide.SetActive(false);
 
             time.StartDay();
 

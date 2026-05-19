@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 413763233991064460}
   - component: {fileID: 6965305369319852077}
   - component: {fileID: 604072938751523000}
+  - component: {fileID: 2177708453345279607}
   m_Layer: 0
   m_Name: Tomatoe
   m_TagString: Ingredient
@@ -313,3 +314,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabAInstanciar: {fileID: 7466369724849552833}
   referenciaDestino: {fileID: 134840043161539829}
+--- !u!114 &2177708453345279607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7466369724849552833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f98ad09f4465ca48b49d73d21de9a25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  materialCocinado: {fileID: 2100000, guid: 89fa4c1824d691f42988b7b0571b0d3f, type: 2}
+  materialQuemado: {fileID: 2100000, guid: 329a33e6dfeae7d4ea4dfad6534eca3b, type: 2}
+  tiempoParaCocinar: 5
+  tiempoParaQuemar: 10

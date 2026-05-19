@@ -4,8 +4,13 @@ using UnityEngine.SceneManagement;
 
 public class MainLoop : MonoBehaviour
 {
+    [SerializeField] private HideOnAnimationEnd hideScript;
+
     [SerializeField] AudioManager audio_manager;
     [SerializeField] Time time;
+
+    [SerializeField] private GameObject cubeToHide;
+
     public bool telephone_grabed;
     public bool dialog_started;
     public bool dialog_finished;
@@ -44,7 +49,10 @@ public class MainLoop : MonoBehaviour
         else if (dialog_finished) //Dialog is over
         {
             day_started = true;
-            //time.StartDay(); -- LO LLAMA ANDREA AL ABRIR PERSIANA
+
+            hideScript.HideCube();
+
+            time.StartDay();
 
         }
 

@@ -3,27 +3,43 @@ using UnityEngine.XR.Content.Interaction;
 
 public class SalsaController : MonoBehaviour
 {
-    public ParticleSystem salsaParticles;
+    public ParticleSystem tomatoeSauce;
     private OnTilt tiltScript;
 
     void Start()
     {
         tiltScript = GetComponent<OnTilt>();
 
-        tiltScript.onBegin.AddListener(ActivarSalsa);
-        //entra a la variable de las particulas Start Size a 0.60. 
-        tiltScript.onEnd.AddListener(DesactivarSalsa);
+        if (tiltScript != null)
+        {
+            tiltScript.onBegin.AddListener(ActivarSalsa);
+            tiltScript.onEnd.AddListener(DesactivarSalsa);
+        }
 
-        salsaParticles.Stop();
+        if (tomatoeSauce != null)
+        {
+            // Configurar colisiones de partículas
+            var collision = tomatoeSauce.collision;
+            collision.enabled = true;
+            collision.sendCollisionMessages = true;
+
+            tomatoeSauce.Stop();
+        }
     }
 
     void ActivarSalsa()
     {
-        salsaParticles.Play();
+        if (tomatoeSauce != null && !tomatoeSauce.isPlaying)
+        {
+            tomatoeSauce.Play();
+        }
     }
 
     void DesactivarSalsa()
     {
-        salsaParticles.Stop();
+        if (tomatoeSauce != null && tomatoeSauce.isPlaying)
+        {
+            tomatoeSauce.Stop();
+        }
     }
 }

@@ -4308,7 +4308,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56831a3f8f208cf419ac9902ee4dadeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  salsaParticles: {fileID: 773487348}
+  tomatoeSauce: {fileID: 0}
 --- !u!1 &773487345
 GameObject:
   m_ObjectHideFlags: 0
@@ -10583,12 +10583,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 974544760}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.752, y: 0.289, z: -14.569}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.6912291, y: -0.8633394, z: -0.69157696}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1743476062}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &974544763
 MonoBehaviour:
@@ -12438,7 +12438,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   materialConSalsa: {fileID: 2100000, guid: 0c7a6c57510c180408a4083785f54dae, type: 2}
-  rendererPizza: {fileID: 1321904086}
 --- !u!1 &1336501156
 GameObject:
   m_ObjectHideFlags: 0
@@ -14915,6 +14914,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 974544762}
   - {fileID: 843551560}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -15032,7 +15032,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   materialConSalsa: {fileID: 2100000, guid: 0c7a6c57510c180408a4083785f54dae, type: 2}
-  rendererPizza: {fileID: 1321904086}
 --- !u!1 &1863207996
 GameObject:
   m_ObjectHideFlags: 0
@@ -17302,4 +17301,3 @@ SceneRoots:
   - {fileID: 1320489988}
   - {fileID: 1321904088}
   - {fileID: 1743476062}
-  - {fileID: 974544762}

@@ -1,50 +1,48 @@
 using UnityEngine;
 
-
 public class RatHandicap : MonoBehaviour, IHandicap
 {
     private bool resolved = false;
     public bool is_resolved => resolved;
 
-    [Header("Movement")]
+    [Header("Hit Settings")]
+    [SerializeField] private int min_hits = 3;
+    [SerializeField] private int max_hits = 8;
+    [SerializeField] private string hit_tag = "Destroyer";  // ← usa el tag del martell
+
+    private int hits_required;
+    private int current_hits = 0;
+
+    [Header("Movement (opcional, pots treure si no vols que es mogui)")]
+    [SerializeField] private bool enable_movement = true;
     [SerializeField] private float move_speed = 5f;
     [SerializeField] private float direction_change_interval = 0.2f;
     [SerializeField] private Vector3 roam_area_center;
     [SerializeField] private Vector3 roam_area_size = new Vector3(4f, 0.5f, 3f);
 
-    [Header("Resolution")]
-    [SerializeField] private string trash_tag = "Trash";
-    [SerializeField] private string window_tag = "Window";
-
     private Vector3 current_direction;
     private float next_direction_change_time;
-    private bool is_grabbed = false;
-    private UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable grab_interactable;
 
     private void Awake()
     {
-        grab_interactable = GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable>();
-        if (grab_interactable != null)
-        {
-            grab_interactable.selectEntered.AddListener(_ => OnGrabbed());
-            grab_interactable.selectExited.AddListener(_ => OnReleased());
-        }
+        hits_required = Random.Range(min_hits, max_hits + 1);
+        Debug.Log($"Rat spawned. Needs {hits_required} hits with tag '{hit_tag}' to resolve.");
 
         if (roam_area_center == Vector3.zero)
             roam_area_center = transform.position;
-
         SetRandomPosition();
-        SetRandomDirection();
+        if (enable_movement) SetRandomDirection();
     }
 
     private void Start()
     {
-        next_direction_change_time = Time.time + direction_change_interval;
+        if (enable_movement)
+            next_direction_change_time = Time.time + direction_change_interval;
     }
 
     private void Update()
     {
-        if (resolved || is_grabbed) return;
+        if (resolved || !enable_movement) return;
 
         if (Time.time >= next_direction_change_time)
         {
@@ -74,7 +72,6 @@ public class RatHandicap : MonoBehaviour, IHandicap
     {
         Vector3 new_pos = pos;
         bool bounced = false;
-
         float half_x = roam_area_size.x / 2;
         float half_z = roam_area_size.z / 2;
 
@@ -104,34 +101,21 @@ public class RatHandicap : MonoBehaviour, IHandicap
             bounced = true;
         }
 
-        if (bounced)
-        {
-            current_direction.Normalize();
-            next_direction_change_time = Time.time + direction_change_interval * 0.5f;
-        }
-
+        if (bounced) current_direction.Normalize();
         return new_pos;
     }
 
-    private void OnGrabbed()
-    {
-        is_grabbed = true;
-    }
-
-    private void OnReleased()
-    {
-        is_grabbed = false;
-        SetRandomDirection();
-        next_direction_change_time = Time.time + direction_change_interval;
-    }
-
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
         if (resolved) return;
-        // 🚨 NOMÉS si la rata està agafada i toca la zona de resolució
-        if (is_grabbed && (other.CompareTag(trash_tag) || other.CompareTag(window_tag)))
+        if (collision.gameObject.CompareTag(hit_tag))
         {
-            Resolve();
+            current_hits++;
+            Debug.Log($"Rat hit! {current_hits}/{hits_required}");
+            if (current_hits >= hits_required)
+            {
+                Resolve();
+            }
         }
     }
 
@@ -141,5 +125,6 @@ public class RatHandicap : MonoBehaviour, IHandicap
         resolved = true;
         HandicapManager.instance.RemoveHandicap(this);
         Destroy(gameObject);
+        Debug.Log("Rat resolved and destroyed.");
     }
 }

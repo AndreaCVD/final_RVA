@@ -4249,7 +4249,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7063214586489008646, guid: 4a0b42a560105eb478d0a55132fb017d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1959
+      value: -2190
       objectReference: {fileID: 0}
     - target: {fileID: 7063214586489008646, guid: 4a0b42a560105eb478d0a55132fb017d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -6669,8 +6669,8 @@ MonoBehaviour:
   grup: {fileID: 913881335}
   barra_contador: {fileID: 641128588}
   timerText: {fileID: 1009205597}
-  cuenta_atras: 0
-  MAX_cuenta: 0
+  cuenta_atras: 30
+  MAX_cuenta: 30
   time_finished: 0
   day_started: 0
   animator: {fileID: 0}

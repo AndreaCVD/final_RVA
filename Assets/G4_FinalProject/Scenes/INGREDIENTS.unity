@@ -4855,8 +4855,9 @@ GameObject:
   - component: {fileID: 746496717}
   - component: {fileID: 746496719}
   - component: {fileID: 746496720}
+  - component: {fileID: 746496721}
   m_Layer: 0
-  m_Name: CanSauce
+  m_Name: CanSauceoriginal
   m_TagString: CanSauce
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5165,7 +5166,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56831a3f8f208cf419ac9902ee4dadeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tomatoeSauce: {fileID: 0}
+  tomatoeSauce: {fileID: 773487348}
+--- !u!114 &746496721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 746496712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a612617927129824ca187f8562fee696, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  part: {fileID: 773487348}
+  nuevoMaterial: {fileID: 2100000, guid: 0c7a6c57510c180408a4083785f54dae, type: 2}
 --- !u!1 &773487345
 GameObject:
   m_ObjectHideFlags: 0
@@ -5177,7 +5192,6 @@ GameObject:
   - component: {fileID: 773487346}
   - component: {fileID: 773487348}
   - component: {fileID: 773487347}
-  - component: {fileID: 773487349}
   m_Layer: 0
   m_Name: TomatoeSauce
   m_TagString: CanSauce
@@ -10000,19 +10014,6 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!114 &773487349
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 773487345}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a612617927129824ca187f8562fee696, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  materialConSalsa: {fileID: 2100000, guid: 0c7a6c57510c180408a4083785f54dae, type: 2}
 --- !u!1001 &782107647
 PrefabInstance:
   m_ObjectHideFlags: 0

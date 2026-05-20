@@ -1,30 +1,40 @@
-// Este script va en el objeto con el Box Collider NO-trigger (el de abajo)
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 public class PizzaSalsa : MonoBehaviour
 {
-    public Material materialConSalsa;
-    private Renderer rendererPizza;
-    private bool salsaAplicada = false;
+    public ParticleSystem part;
+    public List<ParticleCollisionEvent> collisionEvents;
+
+    // Materiales referenciados desde el inspector
+    public Material nuevoMaterial;  // Asigna este material en el inspector
 
     void Start()
     {
-        // Buscar el renderer en este objeto o en el padre
-        rendererPizza = GetComponent<Renderer>();
-        if (rendererPizza == null)
-            rendererPizza = GetComponentInParent<Renderer>();
+        part = GetComponent<ParticleSystem>();
+        collisionEvents = new List<ParticleCollisionEvent>();
     }
 
     void OnParticleCollision(GameObject other)
     {
-        Debug.Log("ENTRA");
-        if (salsaAplicada) return;
-
-        if (rendererPizza != null && materialConSalsa != null)
+        Debug.Log("ENTREA");
+        // Verificar si el objeto tiene el tag "Pizza"
+        if (other.CompareTag("Pizza"))
         {
-            rendererPizza.material = materialConSalsa;
-            salsaAplicada = true;
-            Debug.Log("Salsa aplicada al collider físico");
+            // Buscar el componente MeshRenderer
+            MeshRenderer meshRenderer = other.GetComponent<MeshRenderer>();
+
+            // Cambiar el material si existe el MeshRenderer
+            if (meshRenderer != null && nuevoMaterial != null)
+            {
+                meshRenderer.material = nuevoMaterial;
+                Debug.Log("Material cambiado en: " + other.name);
+            }
+            else
+            {
+                Debug.LogWarning("No se encontró MeshRenderer" + other.name);
+            }
         }
     }
 }

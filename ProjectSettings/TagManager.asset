@@ -10,8 +10,8 @@ TagManager:
   - MiniWorldCamera
   - Water
   - Ingredient
-  - CanSauce
   - Pizza
+  - SalsaTomatoe
   layers:
   - Default
   - TransparentFX

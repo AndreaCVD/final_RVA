@@ -24,6 +24,9 @@ public class LevelController : MonoBehaviour
     [Header("Ingredients")]
     public List<GameObject> ingredientPrefabs; // todos los prefabs aquí
 
+    [Header("Timer")]
+    public Timer timer;
+
     // --- Llamado desde MainLoop ---
     public void SetupLevel(float timePerNPC, int totalNPCs, List<Recipe> recipes)
     {
@@ -61,6 +64,15 @@ public class LevelController : MonoBehaviour
 
         npcSpawnedCount++;
         Debug.Log($"NPC {npcSpawnedCount}/{totalNPCs} spawnejat amb recepta: {recipe?.recipeName}");
+
+        //Comenzar el timer
+        if(timer != null)
+        {
+            timer.SetTime(timePerNPC);
+        } else
+        {
+            Debug.LogWarning("LevelController: no hay Timer asignado en el Inspector");
+        }
     }
 
     IEnumerator WaitForBlindsAndSpawn()

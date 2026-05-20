@@ -30,13 +30,15 @@ public class Timer : MonoBehaviour
         //Cuando no haya tiempo asignado
         if (timerText != null)
         {
+            Debug.Log("AAAAAAAAAAAAA");
             timerText.text = "Day not started";
             timerText.color = Color.white;
         }
     }
     void Update()
     {
-        if (day_started && !time_finished) return;
+        if (!day_started && !time_finished) return;
+
 
         cuenta_atras -= Time.deltaTime;
         cuenta_atras = Mathf.Max(cuenta_atras, 0f); //Nunca bajara de 0

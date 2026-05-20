@@ -3628,8 +3628,7 @@ PrefabInstance:
       propertyPath: audio_manager
       value: 
       objectReference: {fileID: 283156447}
-    m_RemovedComponents:
-    - {fileID: 5877945222939806500, guid: 92889bf45b8c2e445a35cea73b4a4134, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -4163,6 +4162,10 @@ PrefabInstance:
       propertyPath: m_PresetInfoIsWorld
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2804741872275567907, guid: 4a0b42a560105eb478d0a55132fb017d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3201744248953209034, guid: 4a0b42a560105eb478d0a55132fb017d, type: 3}
       propertyPath: m_Name
       value: Canvas_timer
@@ -4178,6 +4181,10 @@ PrefabInstance:
     - target: {fileID: 6660557788904195445, guid: 4a0b42a560105eb478d0a55132fb017d, type: 3}
       propertyPath: m_Name
       value: Spatial Panel No Nav
+      objectReference: {fileID: 0}
+    - target: {fileID: 7016473884844350804, guid: 4a0b42a560105eb478d0a55132fb017d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7063214586489008646, guid: 4a0b42a560105eb478d0a55132fb017d, type: 3}
       propertyPath: m_Pivot.x
@@ -5809,7 +5816,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1088459654}
   m_Layer: 0
-  m_Name: 7 - 2D UI
+  m_Name: 2D UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8526,14 +8533,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1794816769}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2fac4e6731321445af53ea3a901d098, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   grup: {fileID: 1051263680}
   barra_contador: {fileID: 1991883064}
-  timerText: {fileID: 0}
+  timerText: {fileID: 1009205597}
   cuenta_atras: 100
   MAX_cuenta: 100
   time_finished: 0

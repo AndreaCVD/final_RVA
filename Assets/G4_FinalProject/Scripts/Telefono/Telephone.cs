@@ -11,21 +11,10 @@ public class Telephone : MonoBehaviour
 
     private void Awake()
     {
-        //var socket = GetComponent<XRSocketInteractor>();
-        //socket.selectEntered.AddListener(OnSelectEntered);
-
-        //grab_interactable = GetComponent<XRGrabInteractable>();
-        //grab_interactable.selectEntered.AddListener(OnGrabbed);
-
         grab_interactable = GetComponent<XRGrabInteractable>();
         grab_interactable.selectEntered.AddListener(OnGrabbed);
     }
 
-    //private void OnSelectEntered(SelectEnterEventArgs args)
-    //{
-    //    // 'args.interactableObject' is the object that entered the socket
-    //    Debug.Log("telefono cogido " + args);
-    //}
     private IEnumerator Start()
     {
         yield return new WaitForSeconds(0.5f); // espera antes de activar

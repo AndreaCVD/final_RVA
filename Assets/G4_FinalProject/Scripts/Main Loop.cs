@@ -13,6 +13,8 @@ public class MainLoop : MonoBehaviour
     public bool dialog_started;
     public bool dialog_finished;
     public bool day_started;
+    public bool blindsOpened = false;
+
     bool levelChosen;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -59,7 +61,7 @@ public class MainLoop : MonoBehaviour
         if (_time.IsTimeOver() == false)
         {
             //El juego continua
-            if (!levelChosen)
+            if (!levelChosen && dialog_finished && blindsOpened)
             {
                 StartDay();
             }
@@ -74,14 +76,32 @@ public class MainLoop : MonoBehaviour
         }
 
     }
+
+    public void OnBlindsOpened()
+    {
+        blindsOpened = true;
+    }
     public void StartDay()
     {
         //Vemos en que escena estamos
         Scene active_scene = SceneManager.GetActiveScene();
         switch (active_scene.name)
         {
-            case "Nivel_1":
-                //activar escena Andrea
+            case "ANDREA":
+                LevelController levelController = Object.FindFirstObjectByType<LevelController>();
+                if (levelController != null)
+                    {
+                        levelController.SetupLevel(
+                            timePerNPC: 30f,
+                            totalNPCs: 5,
+                            recipes: levelController.availableRecipes
+                        );
+                    }
+                    else
+                    {
+                        Debug.LogWarning("LevelController no trobat a l'escena!");
+                    }
+                    levelChosen = true;
                 break;
 
         }

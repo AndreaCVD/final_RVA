@@ -3,34 +3,20 @@ using UnityEngine;
 
 public class NPCController : MonoBehaviour
 {
-    [Header("Comanda")]
-    public List<GameObject> ingredientPrefabs;
-    public float slotSpacing = 0.3f;  
-
     [Header("Display (fix a l'escena)")]
-    public Transform commandDisplay; // arrossega el CommandDisplay de l'escena
+    public Transform commandDisplay;
+    public float slotSpacing = 0.3f;
 
     [HideInInspector] public List<string> currentOrder = new List<string>();
 
-    void Start()
+    // LevelController crida això en el moment del spawn
+    public void SetOrder(Recipe recipe, List<GameObject> prefabs)
     {
-        GenerateOrder();
-        DisplayOrder();
+        currentOrder = new List<string>(recipe.ingredients);
+        DisplayOrder(prefabs);
     }
 
-    void GenerateOrder()
-    {
-        currentOrder.Clear();
-
-        List<GameObject> shuffled = new List<GameObject>(ingredientPrefabs);
-        shuffled.Sort((a, b) => Random.Range(-1, 2));
-
-        int count = Random.Range(2, 5);
-        for (int i = 0; i < count && i < shuffled.Count; i++)
-            currentOrder.Add(shuffled[i].name);
-    }
-
-    void DisplayOrder()
+    void DisplayOrder(List<GameObject> prefabs)
     {
         foreach (Transform child in commandDisplay)
             Destroy(child.gameObject);
@@ -40,9 +26,12 @@ public class NPCController : MonoBehaviour
 
         for (int i = 0; i < currentOrder.Count; i++)
         {
-            GameObject prefab = ingredientPrefabs.Find(p => p.name == currentOrder[i]);
-            if (prefab == null) continue;
-
+            GameObject prefab = prefabs.Find(p => p.name == currentOrder[i]);
+            if (prefab == null)
+            {
+                Debug.LogWarning($"Prefab no trobat per ingredient: {currentOrder[i]}");
+                continue;
+            }
             Vector3 offset = new Vector3(startX + i * slotSpacing, 0, 0);
             GameObject slot = Instantiate(prefab, commandDisplay);
             slot.transform.localPosition = offset;

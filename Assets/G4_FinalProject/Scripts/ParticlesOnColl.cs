@@ -5,7 +5,6 @@ public class ParticlesOnColl : MonoBehaviour
     public GameObject MeshPizza;
     public Material TomatoSauce;
     public Material WhiteSauce;
-    //public Material Pimineta; // fer un sprite Pimienta
     public GameObject pepperPrefab;
     public Transform attachPizza;
 
@@ -50,7 +49,6 @@ public class ParticlesOnColl : MonoBehaviour
             }
             else
             {
-                //MeshPizza.GetComponent<MeshRenderer>().material = Pimineta;
                 Pepper = true;
                 //instanciar Sprite Pimienta i donarli el 
                 //AttachPizza transform + rotation + scale

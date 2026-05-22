@@ -3780,6 +3780,7 @@ MonoBehaviour:
   m_InteractionManager: {fileID: 0}
   m_InteractionLayers:
     m_Bits: 4294967295
+    m_Mask: -1
   m_Handedness: 0
   m_AttachTransform: {fileID: 1228218780}
   m_KeepSelectedTargetValid: 1
@@ -3791,23 +3792,40 @@ MonoBehaviour:
   m_HoverEntered:
     m_PersistentCalls:
       m_Calls: []
+    m_CallsDirty: 1
   m_HoverExited:
     m_PersistentCalls:
       m_Calls: []
+    m_CallsDirty: 1
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls: []
+    m_CallsDirty: 1
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
+    m_CallsDirty: 1
+  m_AllowHover: 1
+  m_AllowSelect: 1
+  m_IsPerformingManualInteraction: 0
+  <hasHover>k__BackingField: 0
+  <hasSelection>k__BackingField: 0
   m_StartingHoverFilters: []
   m_StartingSelectFilters: []
+  m_ClearedLargestInteractionStrength: 0
+  m_RegisteredInteractionManager: {fileID: 0}
+  m_ProcessStartingSelectedInteractable: 0
+  m_XROriginTransform: {fileID: 0}
+  m_HasXROrigin: 0
+  m_FailedToFindXROrigin: 0
+  <targetPriorityMode>k__BackingField: 0
   m_ShowInteractableHoverMeshes: 1
   m_InteractableHoverMeshMaterial: {fileID: 0}
   m_InteractableCantHoverMeshMaterial: {fileID: 0}
   m_SocketActive: 1
   m_InteractableHoverScale: 1
   m_RecycleDelayTime: 1
+  m_LastRemoveTime: -1
   m_HoverSocketSnapping: 0
   m_SocketSnappingRadius: 0.1
   m_SocketScaleMode: 0
@@ -4902,7 +4920,7 @@ Transform:
   m_GameObject: {fileID: 650255512}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9569,7 +9587,7 @@ MonoBehaviour:
   TomatoSauce: {fileID: 2100000, guid: 0c7a6c57510c180408a4083785f54dae, type: 2}
   WhiteSauce: {fileID: 2100000, guid: 7458eb815b50338468126888226d5e31, type: 2}
   pepperPrefab: {fileID: 5063920584660688033, guid: 3871debe073a78f41829e51cae312d82, type: 3}
-  attachPizza: {fileID: 650255512}
+  attachPizza: {fileID: 650255513}
 --- !u!114 &1321904094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11775,7 +11793,7 @@ Transform:
   m_GameObject: {fileID: 1805351374}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.5009997, y: 1.5999999, z: -0.21500015}
+  m_LocalPosition: {x: -2.5009997, y: 1.93, z: -0.21500015}
   m_LocalScale: {x: 0.16561, y: 4.343869, z: 0.16561}
   m_ConstrainProportionsScale: 0
   m_Children: []

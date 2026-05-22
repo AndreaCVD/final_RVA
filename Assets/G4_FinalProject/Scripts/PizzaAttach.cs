@@ -16,6 +16,13 @@ public class PizzaAttach : MonoBehaviour
             GameObject ingredient = other.gameObject;
             AttachIngredient(ingredient);
         }
+        if(other.CompareTag("SpritePepper")) //nuevo
+        {
+            BoxCollider box = other.GetComponent<BoxCollider>();
+            GameObject ingredient = other.gameObject;
+            Debug.Log("Pepper no boxcoll");
+            AttachIngredient(ingredient);
+        }
     }
 
     // Attach ingredient to pizza - PERMANENTE

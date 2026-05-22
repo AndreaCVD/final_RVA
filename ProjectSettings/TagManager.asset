@@ -15,6 +15,7 @@ TagManager:
   - WitheSauce
   - Pepper
   - Oven
+  - SpritePepper
   layers:
   - Default
   - TransparentFX

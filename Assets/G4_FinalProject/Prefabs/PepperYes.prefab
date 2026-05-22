@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5035950814956098333}
   - component: {fileID: 6106360154371764247}
+  - component: {fileID: -7628314398175778868}
   m_Layer: 0
   m_Name: PepperYes
-  m_TagString: Ingredient
+  m_TagString: SpritePepper
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -87,3 +88,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!65 &-7628314398175778868
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5063920584660688033}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 9.200001, y: 6.2800016, z: 0.008196097}
+  m_Center: {x: 0, y: 4.205148e-18, z: -0.001390827}

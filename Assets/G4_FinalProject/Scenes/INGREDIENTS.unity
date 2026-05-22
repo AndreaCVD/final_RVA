@@ -5364,7 +5364,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5cfb8dffe4fd62749bb61249e39d26b9, type: 2}
+  - {fileID: 2100000, guid: ddd2be59f7b3f0745976e2cf95f23baa, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -12405,7 +12405,7 @@ PrefabInstance:
     - target: {fileID: 6593306816423018715, guid: 59c12a54e8452a54ca56058664530bf3, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 0c7a6c57510c180408a4083785f54dae, type: 2}
+      objectReference: {fileID: 2100000, guid: c20fd449221400342977d29fe50016c9, type: 2}
     - target: {fileID: 7466369724849552833, guid: 59c12a54e8452a54ca56058664530bf3, type: 3}
       propertyPath: m_Name
       value: Tomatoe

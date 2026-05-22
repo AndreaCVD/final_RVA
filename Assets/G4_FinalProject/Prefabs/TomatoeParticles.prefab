@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2592319991780113405}
   - component: {fileID: 7307640696224721843}
   m_Layer: 0
-  m_Name: Particle System
+  m_Name: TomatoeParticles
   m_TagString: SalsaTomatoe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

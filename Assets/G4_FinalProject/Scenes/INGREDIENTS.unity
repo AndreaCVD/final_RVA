@@ -1763,7 +1763,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 8bb061e3c083f914b81907d456385511, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4877,6 +4877,37 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 1865056248366311061, guid: c60e7b9faaf11024985888cb45f6058a, type: 3}
+--- !u!1 &650255512
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 650255513}
+  m_Layer: 0
+  m_Name: AttachPizza
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &650255513
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 650255512}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1321904088}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &660337384
 GameObject:
   m_ObjectHideFlags: 0
@@ -9342,6 +9373,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1805351377}
+  - {fileID: 650255513}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1321904089
@@ -9536,7 +9568,8 @@ MonoBehaviour:
   MeshPizza: {fileID: 1321904084}
   TomatoSauce: {fileID: 2100000, guid: 0c7a6c57510c180408a4083785f54dae, type: 2}
   WhiteSauce: {fileID: 2100000, guid: 7458eb815b50338468126888226d5e31, type: 2}
-  Pimineta: {fileID: 2100000, guid: 8bb061e3c083f914b81907d456385511, type: 2}
+  pepperPrefab: {fileID: 5063920584660688033, guid: 3871debe073a78f41829e51cae312d82, type: 3}
+  attachPizza: {fileID: 650255512}
 --- !u!114 &1321904094
 MonoBehaviour:
   m_ObjectHideFlags: 0

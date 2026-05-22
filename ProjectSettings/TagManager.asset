@@ -12,6 +12,9 @@ TagManager:
   - Ingredient
   - Pizza
   - SalsaTomatoe
+  - CanSauce
+  - WitheSauce
+  - Pepper
   layers:
   - Default
   - TransparentFX

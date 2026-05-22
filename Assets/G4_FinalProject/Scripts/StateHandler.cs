@@ -2,79 +2,48 @@ using UnityEngine;
 
 public class StateHandler : MonoBehaviour
 {
-    public enum Estado { Crudo, Cocinado, Quemado }
+    public Material rawMaterial;
+    public Material cookedMaterial;
+    public Material burnedMaterial;
 
-    [Header("Materiales")]
-    public Material materialCocinado;
-    public Material materialQuemado;
-
-    [Header("Tiempos")]
-    public float tiempoParaCocinar = 5f;
-    public float tiempoParaQuemar = 10f;
-
-    private Estado estadoActual = Estado.Crudo;
-    private Renderer objectRenderer;
-    private float tiempoEntrada;
-    private bool estaEnHorno = false;
+    private Renderer rend;
+    private float timeInOven = 0f;
+    private bool isCooking = false;
 
     void Start()
     {
-        objectRenderer = GetComponent<Renderer>();
-        if (objectRenderer == null)
-            objectRenderer = GetComponentInChildren<Renderer>();
+        rend = GetComponent<Renderer>();
+        rend.material = rawMaterial;
     }
 
     void Update()
     {
-        if (estaEnHorno)
+        if (isCooking)
         {
-            float tiempoTranscurrido = Time.time - tiempoEntrada;
+            timeInOven += Time.deltaTime;
 
-            if (estadoActual == Estado.Crudo && tiempoTranscurrido >= tiempoParaCocinar)
-            {
-                CambiarEstado(Estado.Cocinado);
-            }
-            else if (estadoActual == Estado.Cocinado && tiempoTranscurrido >= tiempoParaQuemar)
-            {
-                CambiarEstado(Estado.Quemado);
-            }
+            if (timeInOven >= 5f)
+                rend.material = burnedMaterial;
+            else if (timeInOven >= 3f)
+                rend.material = cookedMaterial;
         }
     }
 
-    public void EntrarEnHorno(float tiempoActual)
+    void OnTriggerEnter(Collider other)
     {
-        if (!estaEnHorno)
+        if (other.CompareTag("Oven"))
         {
-            estaEnHorno = true;
-            tiempoEntrada = tiempoActual;
-            Debug.Log(gameObject.name + " entro al horno - CRUDO");
+            isCooking = true;
+            Debug.Log("Ingrediente dentro del horno");
         }
     }
 
-    public void SalirDelHorno()
+    void OnTriggerExit(Collider other)
     {
-        estaEnHorno = false;
-        Debug.Log(gameObject.name + " salio del horno - Estado: " + estadoActual);
-    }
-
-    void CambiarEstado(Estado nuevoEstado)
-    {
-        estadoActual = nuevoEstado;
-
-        if (nuevoEstado == Estado.Cocinado && materialCocinado != null)
+        if (other.CompareTag("Oven"))
         {
-            objectRenderer.material = materialCocinado;
-            Debug.Log(gameObject.name + " se COCINO");
+            isCooking = false;
+            Debug.Log("Ingrediente fuera del horno");
         }
-        else if (nuevoEstado == Estado.Quemado && materialQuemado != null)
-        {
-            objectRenderer.material = materialQuemado;
-            Debug.Log(gameObject.name + " se QUEMO");
-        }
-    }
-
-    public Estado GetEstadoActual()
-    {
-        return estadoActual;
     }
 }

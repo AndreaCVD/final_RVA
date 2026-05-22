@@ -956,6 +956,7 @@ GameObject:
   - component: {fileID: 1321904090}
   - component: {fileID: 1321904089}
   - component: {fileID: 1321904092}
+  - component: {fileID: 1321904093}
   m_Layer: 0
   m_Name: PizzaBase
   m_TagString: Pizza
@@ -1225,6 +1226,22 @@ MonoBehaviour:
   materialQuemado: {fileID: 2100000, guid: 329a33e6dfeae7d4ea4dfad6534eca3b, type: 2}
   tiempoParaCocinar: 5
   tiempoParaQuemar: 10
+--- !u!114 &1321904093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1321904084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 171494ef002c0dc47b56bc9bc760caab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MeshPizza: {fileID: 1321904084}
+  TomatoSauce: {fileID: 2100000, guid: 0c7a6c57510c180408a4083785f54dae, type: 2}
+  WhiteSauce: {fileID: 2100000, guid: 7458eb815b50338468126888226d5e31, type: 2}
+  Pimineta: {fileID: 2100000, guid: 8bb061e3c083f914b81907d456385511, type: 2}
 --- !u!1 &1360941021
 GameObject:
   m_ObjectHideFlags: 0
@@ -1422,8 +1439,6 @@ GameObject:
   - component: {fileID: 1805351377}
   - component: {fileID: 1805351380}
   - component: {fileID: 1805351381}
-  - component: {fileID: 1805351383}
-  - component: {fileID: 1805351382}
   m_Layer: 0
   m_Name: PizzaSocket
   m_TagString: Untagged
@@ -1480,50 +1495,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredients: []
---- !u!114 &1805351382
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1805351374}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84e8b3af6c04f704d9382aed587a58ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  newMaterial: {fileID: 2100000, guid: 0c7a6c57510c180408a4083785f54dae, type: 2}
---- !u!114 &1805351383
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1805351374}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59fe722e016ecae438f59fbf21af3ecf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_RequiredTag: SalsaTomatoe
-  m_OnEnter:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1805351382}
-        m_TargetAssemblyTypeName: ChangeMaterialOnParent, Assembly-CSharp
-        m_MethodName: ChangeParentMaterial
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_OnExit:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1001 &1906116310
 PrefabInstance:
   m_ObjectHideFlags: 0

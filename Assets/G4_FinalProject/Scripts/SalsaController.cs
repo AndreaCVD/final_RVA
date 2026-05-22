@@ -18,11 +18,9 @@ public class SalsaController : MonoBehaviour
 
         if (tomatoeSauce != null)
         {
-            // Configurar colisiones de partículas
             var collision = tomatoeSauce.collision;
             collision.enabled = true;
             collision.sendCollisionMessages = true;
-
             tomatoeSauce.Stop();
         }
     }

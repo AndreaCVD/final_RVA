@@ -9,7 +9,6 @@ TagManager:
   - Destroyer
   - MiniWorldCamera
   - Water
-  - Trash
   layers:
   - Default
   - TransparentFX

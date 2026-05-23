@@ -66,7 +66,7 @@ public class ParticlesOnColl : MonoBehaviour
             else
             {
                 Oregan = true;
-                GameObject newPepper = Instantiate(pepperPrefab, attachPizza.position, Quaternion.Euler(-90, 0, 0));
+                GameObject newPepper = Instantiate(oreganPrefab, attachPizza.position, Quaternion.Euler(-90, 0, 0));
             }
         }
     }

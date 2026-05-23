@@ -36,5 +36,6 @@ public class InstantiateOnceOnGrab : MonoBehaviour
             Debug.Log($"Instanciado: {prefabAInstanciar.name} con física activada");
         }
     }
+    //InstatiateOnceOnGrab().SetActive(false);
 }
 

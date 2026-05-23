@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
+using UnityEngine.XR.Interaction.Toolkit.Transformers;
 
 public class PizzaAttach : MonoBehaviour
 {
@@ -43,11 +44,18 @@ public class PizzaAttach : MonoBehaviour
             rb.useGravity = false;
         }
 
-        // DESTROY the XRGrabInteractable (can never be grabbed again)
+        // enable false the XRGrabInteractable
         XRGrabInteractable grab = ingredient.GetComponent<XRGrabInteractable>();
         if (grab != null)
         {
-            Destroy(grab);
+            grab.enabled = false;
+        }
+
+        // aquesta linea se suposa es per arreglar el bug del [Near-Far Interactor] Dynamic Attach
+        XRGeneralGrabTransformer trans = ingredient.GetComponent<XRGeneralGrabTransformer>();
+        if (trans != null)
+        {
+            trans.enabled = false;
         }
 
         // Change parent to pizza

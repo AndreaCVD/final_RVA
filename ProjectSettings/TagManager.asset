@@ -9,6 +9,15 @@ TagManager:
   - Destroyer
   - MiniWorldCamera
   - Water
+  - Ingredient
+  - Pizza
+  - SalsaTomatoe
+  - WitheSauce
+  - Pepper
+  - Oven
+  - SpritePepper
+  - SpriteOregan
+  - Oregan
   layers:
   - Default
   - TransparentFX

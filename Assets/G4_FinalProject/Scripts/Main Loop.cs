@@ -7,12 +7,14 @@ public class MainLoop : MonoBehaviour
     [SerializeField] private GameObject cubeToHide;
 
     [SerializeField] AudioManager audio_manager;
-    [SerializeField] Time time;
+    [SerializeField] Timer _time;
 
     public bool telephone_grabed;
     public bool dialog_started;
     public bool dialog_finished;
     public bool day_started;
+    public bool blindsOpened = false;
+
     bool levelChosen;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -56,10 +58,10 @@ public class MainLoop : MonoBehaviour
 
         //-------------------------------------------------
 
-        if (time.IsTimeOver() == false)
+        if (_time.IsTimeOver() == false)
         {
             //El juego continua
-            if (!levelChosen)
+            if (!levelChosen && dialog_finished && blindsOpened)
             {
                 StartDay();
             }
@@ -74,22 +76,35 @@ public class MainLoop : MonoBehaviour
         }
 
     }
-    void StartDay()
+
+    public void OnBlindsOpened()
+    {
+        blindsOpened = true;
+    }
+    public void StartDay()
     {
         //Vemos en que escena estamos
         Scene active_scene = SceneManager.GetActiveScene();
         switch (active_scene.name)
         {
-            case "Nivel_1":
-                //activar escena Andrea
+            case "ANDREA":
+                LevelController levelController = Object.FindFirstObjectByType<LevelController>();
+                if (levelController != null)
+                    {
+                        levelController.SetupLevel(
+                            timePerNPC: 30f,
+                            totalNPCs: 5,
+                            recipes: levelController.availableRecipes
+                        );
+                    }
+                    else
+                    {
+                        Debug.LogWarning("LevelController no trobat a l'escena!");
+                    }
+                    levelChosen = true;
                 break;
 
         }
-    }
-
-    public void OnDayStart()
-    {
-        Debug.Log("Start Commands");
     }
 
     private void TelefonDialog()
@@ -101,6 +116,13 @@ public class MainLoop : MonoBehaviour
         switch (active_scene.name)
         {
             case "Aina":
+                Debug.Log("Estamos en escena: " + active_scene.name);
+                audio_manager.StartDialog(0);
+                duration = audio_manager.ReturnDuration(0);
+                //Debug.Log("Duracion = " + duration);
+
+                break;
+            case "ANDREA":
                 Debug.Log("Estamos en escena: " + active_scene.name);
                 audio_manager.StartDialog(0);
                 duration = audio_manager.ReturnDuration(0);
@@ -130,7 +152,7 @@ public class MainLoop : MonoBehaviour
         dialog_finished = true;
         Debug.Log("El dialogo ha terminado");
     }
-    public void Telephone()
+    public void _Telephone()
     {
         telephone_grabed = true;
         Debug.Log("Se ha cojido el telefono");

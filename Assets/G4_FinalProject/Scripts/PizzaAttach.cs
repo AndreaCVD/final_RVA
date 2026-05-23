@@ -18,9 +18,16 @@ public class PizzaAttach : MonoBehaviour
         }
         if(other.CompareTag("SpritePepper")) //nuevo
         {
-            BoxCollider box = other.GetComponent<BoxCollider>();
+            other.GetComponent<BoxCollider>().enabled = false;
             GameObject ingredient = other.gameObject;
             Debug.Log("Pepper no boxcoll");
+            AttachIngredient(ingredient);
+        }
+        if (other.CompareTag("SpriteOregan")) //nuevo
+        {
+            other.GetComponent<BoxCollider>().enabled = false;
+            GameObject ingredient = other.gameObject;
+            Debug.Log("Oregan no boxcoll");
             AttachIngredient(ingredient);
         }
     }

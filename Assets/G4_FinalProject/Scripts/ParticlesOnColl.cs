@@ -6,11 +6,13 @@ public class ParticlesOnColl : MonoBehaviour
     public Material TomatoSauce;
     public Material WhiteSauce;
     public GameObject pepperPrefab;
+    public GameObject oreganPrefab;
     public Transform attachPizza;
 
     private bool Tomatoe = false;
     private bool White = false;
     private bool Pepper = false;
+    private bool Oregan = false;
 
     private void OnParticleCollision(GameObject other)
     {
@@ -52,6 +54,18 @@ public class ParticlesOnColl : MonoBehaviour
                 Pepper = true;
                 //instanciar Sprite Pimienta i donarli el 
                 //AttachPizza transform + rotation + scale
+                GameObject newPepper = Instantiate(pepperPrefab, attachPizza.position, Quaternion.Euler(-90, 0, 0));
+            }
+        }
+        else if (other.CompareTag("Oregan"))
+        {
+            if (Oregan == true)
+            {
+                return;
+            }
+            else
+            {
+                Oregan = true;
                 GameObject newPepper = Instantiate(pepperPrefab, attachPizza.position, Quaternion.Euler(-90, 0, 0));
             }
         }

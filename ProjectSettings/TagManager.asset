@@ -16,6 +16,8 @@ TagManager:
   - Pepper
   - Oven
   - SpritePepper
+  - SpriteOregan
+  - Oregan
   layers:
   - Default
   - TransparentFX

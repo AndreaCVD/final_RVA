@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class OvenHandicap : MonoBehaviour, IHandicap
 {
@@ -18,6 +19,14 @@ public class OvenHandicap : MonoBehaviour, IHandicap
     private int current_hits = 0;
     private JointLimits original_limits;
 
+    [Header("Visual Feedback")]
+    [SerializeField] private GameObject hit_feedback_object;
+    [SerializeField] private Color hit_flash_color = Color.red;
+    [SerializeField] private float hit_flash_duration = 0.1f;
+    private Material original_material;
+    private MeshRenderer feedback_renderer;
+    private Coroutine flash_coroutine;
+
     private void Awake()
     {
         hits_required = Random.Range(min_hits, max_hits + 1);
@@ -25,13 +34,17 @@ public class OvenHandicap : MonoBehaviour, IHandicap
 
         if (door_hinge != null)
         {
-            // Guardem límits originals i bloquejem la porta (min=max=0)
             original_limits = door_hinge.limits;
             JointLimits locked_limits = original_limits;
             locked_limits.min = 0;
             locked_limits.max = 0;
             door_hinge.limits = locked_limits;
         }
+
+        if (hit_feedback_object == null) hit_feedback_object = gameObject;
+        feedback_renderer = hit_feedback_object.GetComponent<MeshRenderer>();
+        if (feedback_renderer != null && feedback_renderer.material != null)
+            original_material = feedback_renderer.material;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -39,20 +52,35 @@ public class OvenHandicap : MonoBehaviour, IHandicap
         if (resolved) return;
         if (collision.gameObject.CompareTag(hit_tag))
         {
-            // Opcional: comprovar si el cop és a la zona de detecció
             if (hit_detection_point != null)
             {
                 float dist = Vector3.Distance(collision.contacts[0].point, hit_detection_point.position);
-                if (dist > 0.3f) return; // ignora cops lluny
+                if (dist > 0.3f) return;
             }
 
             current_hits++;
             Debug.Log($"Oven hit! {current_hits}/{hits_required}");
+            FlashRed();
             if (current_hits >= hits_required)
             {
                 Resolve();
             }
         }
+    }
+
+    private void FlashRed()
+    {
+        if (feedback_renderer == null) return;
+        if (flash_coroutine != null) StopCoroutine(flash_coroutine);
+        flash_coroutine = StartCoroutine(DoFlashRed());
+    }
+
+    private IEnumerator DoFlashRed()
+    {
+        feedback_renderer.material.color = hit_flash_color;
+        yield return new WaitForSeconds(hit_flash_duration);
+        if (feedback_renderer != null && original_material != null)
+            feedback_renderer.material = original_material;
     }
 
     public void Resolve()
@@ -67,7 +95,6 @@ public class OvenHandicap : MonoBehaviour, IHandicap
         }
 
         HandicapManager.instance.RemoveHandicap(this);
-        // No destruïm l'objecte del forn perquè és part de l'escena
         Debug.Log("Oven handicap resolved.");
     }
 }

@@ -8,12 +8,12 @@ public class RatHandicap : MonoBehaviour, IHandicap
     [Header("Hit Settings")]
     [SerializeField] private int min_hits = 3;
     [SerializeField] private int max_hits = 8;
-    [SerializeField] private string hit_tag = "Destroyer";  // ← usa el tag del martell
+    [SerializeField] private string hit_tag = "Destroyer";
 
     private int hits_required;
     private int current_hits = 0;
 
-    [Header("Movement (opcional, pots treure si no vols que es mogui)")]
+    [Header("Movement")]
     [SerializeField] private bool enable_movement = true;
     [SerializeField] private float move_speed = 5f;
     [SerializeField] private float direction_change_interval = 0.2f;
@@ -37,20 +37,20 @@ public class RatHandicap : MonoBehaviour, IHandicap
     private void Start()
     {
         if (enable_movement)
-            next_direction_change_time = Time.time + direction_change_interval;
+            next_direction_change_time = UnityEngine.Time.time + direction_change_interval;
     }
 
     private void Update()
     {
         if (resolved || !enable_movement) return;
 
-        if (Time.time >= next_direction_change_time)
+        if (UnityEngine.Time.time >= next_direction_change_time)
         {
             SetRandomDirection();
-            next_direction_change_time = Time.time + direction_change_interval;
+            next_direction_change_time = UnityEngine.Time.time + direction_change_interval;
         }
 
-        Vector3 new_pos = transform.position + current_direction * move_speed * Time.deltaTime;
+        Vector3 new_pos = transform.position + current_direction * move_speed * UnityEngine.Time.deltaTime;
         new_pos = BounceInsideArea(new_pos);
         transform.position = new_pos;
     }

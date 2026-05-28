@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class RatHandicap : MonoBehaviour, IHandicap
 {
@@ -23,6 +24,13 @@ public class RatHandicap : MonoBehaviour, IHandicap
     private Vector3 current_direction;
     private float next_direction_change_time;
 
+    [Header("Visual Feedback")]
+    [SerializeField] private Color hit_flash_color = Color.red;
+    [SerializeField] private float hit_flash_duration = 0.1f;
+    private Material original_material;
+    private MeshRenderer mesh_renderer;
+    private Coroutine flash_coroutine;
+
     private void Awake()
     {
         hits_required = Random.Range(min_hits, max_hits + 1);
@@ -32,6 +40,10 @@ public class RatHandicap : MonoBehaviour, IHandicap
             roam_area_center = transform.position;
         SetRandomPosition();
         if (enable_movement) SetRandomDirection();
+
+        mesh_renderer = GetComponent<MeshRenderer>();
+        if (mesh_renderer != null && mesh_renderer.material != null)
+            original_material = mesh_renderer.material;
     }
 
     private void Start()
@@ -112,11 +124,27 @@ public class RatHandicap : MonoBehaviour, IHandicap
         {
             current_hits++;
             Debug.Log($"Rat hit! {current_hits}/{hits_required}");
+            FlashRed();
             if (current_hits >= hits_required)
             {
                 Resolve();
             }
         }
+    }
+
+    private void FlashRed()
+    {
+        if (mesh_renderer == null) return;
+        if (flash_coroutine != null) StopCoroutine(flash_coroutine);
+        flash_coroutine = StartCoroutine(DoFlashRed());
+    }
+
+    private IEnumerator DoFlashRed()
+    {
+        mesh_renderer.material.color = hit_flash_color;
+        yield return new WaitForSeconds(hit_flash_duration);
+        if (mesh_renderer != null && original_material != null)
+            mesh_renderer.material = original_material;
     }
 
     public void Resolve()

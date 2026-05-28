@@ -1233,6 +1233,75 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 247222453}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &291783617
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4643790652748380506, guid: 4dd1e8feb40a1034c94b4d2e94ba017e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5.6067796
+      objectReference: {fileID: 0}
+    - target: {fileID: 4643790652748380506, guid: 4dd1e8feb40a1034c94b4d2e94ba017e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4.844707
+      objectReference: {fileID: 0}
+    - target: {fileID: 4643790652748380506, guid: 4dd1e8feb40a1034c94b4d2e94ba017e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 6.773385
+      objectReference: {fileID: 0}
+    - target: {fileID: 4643790652748380506, guid: 4dd1e8feb40a1034c94b4d2e94ba017e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 12.792999
+      objectReference: {fileID: 0}
+    - target: {fileID: 4643790652748380506, guid: 4dd1e8feb40a1034c94b4d2e94ba017e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.2800007
+      objectReference: {fileID: 0}
+    - target: {fileID: 4643790652748380506, guid: 4dd1e8feb40a1034c94b4d2e94ba017e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 73.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4643790652748380506, guid: 4dd1e8feb40a1034c94b4d2e94ba017e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4643790652748380506, guid: 4dd1e8feb40a1034c94b4d2e94ba017e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4643790652748380506, guid: 4dd1e8feb40a1034c94b4d2e94ba017e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4643790652748380506, guid: 4dd1e8feb40a1034c94b4d2e94ba017e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4643790652748380506, guid: 4dd1e8feb40a1034c94b4d2e94ba017e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4643790652748380506, guid: 4dd1e8feb40a1034c94b4d2e94ba017e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4643790652748380506, guid: 4dd1e8feb40a1034c94b4d2e94ba017e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5420608071207019488, guid: 4dd1e8feb40a1034c94b4d2e94ba017e, type: 3}
+      propertyPath: m_Name
+      value: FoodTruckBase (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4dd1e8feb40a1034c94b4d2e94ba017e, type: 3}
 --- !u!1 &302613644
 GameObject:
   m_ObjectHideFlags: 0
@@ -10942,6 +11011,7 @@ SceneRoots:
   - {fileID: 2430238835731397828}
   - {fileID: 4584361051434537765}
   - {fileID: 80907612426837036}
+  - {fileID: 291783617}
   - {fileID: 4134465954273468914}
   - {fileID: 2069420577}
   - {fileID: 684427459}

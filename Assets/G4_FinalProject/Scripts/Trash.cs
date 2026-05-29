@@ -10,8 +10,12 @@ public class Trash : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        // Destruir cualquier objeto que entre
-        Destroy(other.gameObject);
-        Debug.Log($"Destruido: {other.name}");
+        if (other.gameObject.tag == "Pizza" || other.gameObject.tag == "Ingredient" || other.gameObject.tag == "Rata")
+        {
+            // Destruir cualquier objeto que entre
+            Destroy(other.gameObject);
+            Debug.Log($"Destruido: {other.name}");
+        }
+
     }
 }

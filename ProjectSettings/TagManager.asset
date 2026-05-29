@@ -18,6 +18,7 @@ TagManager:
   - SpritePepper
   - SpriteOregan
   - Oregan
+  - Rata
   layers:
   - Default
   - TransparentFX

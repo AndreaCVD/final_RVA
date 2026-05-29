@@ -87,7 +87,7 @@ public class MainLoop : MonoBehaviour
         Scene active_scene = SceneManager.GetActiveScene();
         switch (active_scene.name)
         {
-            case "ANDREA":
+            case "Intento_Implementacio_01":
                 LevelController levelController = Object.FindFirstObjectByType<LevelController>();
                 if (levelController != null)
                     {

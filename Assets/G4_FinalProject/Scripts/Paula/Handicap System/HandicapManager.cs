@@ -22,8 +22,15 @@ public class HandicapManager : MonoBehaviour
 
     private void Awake()
     {
-        if (instance == null) instance = this;
-        else Destroy(gameObject);
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     public int GetUnresolvedCount()
@@ -41,20 +48,17 @@ public class HandicapManager : MonoBehaviour
             Debug.LogWarning("No handicap prefabs assigned.");
             return;
         }
-
         if (GetUnresolvedCount() >= max_unresolved_handicaps)
         {
-            Debug.Log($"Max unresolved handicaps reached ({max_unresolved_handicaps}). Not spawning new one.");
+            Debug.Log($"Max unresolved handicaps reached ({max_unresolved_handicaps}). Not spawning.");
             return;
         }
-
         int idx = Random.Range(0, handicap_prefabs.Length);
         Vector3 pos = spawn_area_center + new Vector3(
             Random.Range(-spawn_area_size.x / 2, spawn_area_size.x / 2),
             Random.Range(0, spawn_area_size.y),
             Random.Range(-spawn_area_size.z / 2, spawn_area_size.z / 2)
         );
-
         GameObject go = Instantiate(handicap_prefabs[idx], pos, Quaternion.identity);
         IHandicap h = go.GetComponent<IHandicap>();
         if (h != null)
@@ -72,7 +76,6 @@ public class HandicapManager : MonoBehaviour
     public void OnOrderDelivered(int points_earned)
     {
         int final_points = points_earned;
-
         int unresolved_count = 0;
         foreach (IHandicap handicap in active_handicaps)
         {
@@ -82,12 +85,9 @@ public class HandicapManager : MonoBehaviour
                 unresolved_count++;
             }
         }
-
         if (unresolved_count > 0)
             Debug.Log($"Subtracted {unresolved_count * penalty_per_unresolved} points for unresolved handicaps.");
-
         if (final_points < 0) final_points = 0;
-
         ScoreManager.instance.AddPoints(final_points);
         active_handicaps.RemoveAll(h => h.is_resolved);
     }

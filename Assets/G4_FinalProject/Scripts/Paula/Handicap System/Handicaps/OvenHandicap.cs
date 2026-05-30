@@ -7,17 +7,18 @@ public class OvenHandicap : MonoBehaviour, IHandicap
     public bool is_resolved => resolved;
 
     [Header("Oven Door")]
-    [SerializeField] private HingeJoint door_hinge;
+    [SerializeField] private ConfigurableJoint door_joint; // Ara és ConfigurableJoint
     [SerializeField] private string hit_tag = "Destroyer";
 
     [Header("Hit Settings")]
     [SerializeField] private int min_hits = 3;
     [SerializeField] private int max_hits = 10;
-    [SerializeField] private Transform hit_detection_point;
+    // Eliminat hit_detection_point
 
     private int hits_required;
     private int current_hits = 0;
-    private JointLimits original_limits;
+    private ConfigurableJointMotion original_x, original_y, original_z;
+    private ConfigurableJointMotion original_ax, original_ay, original_az;
 
     [Header("Visual Feedback")]
     [SerializeField] private GameObject hit_feedback_object;
@@ -29,17 +30,32 @@ public class OvenHandicap : MonoBehaviour, IHandicap
 
     private void Awake()
     {
+        if (door_joint == null) door_joint = GetComponent<ConfigurableJoint>();
+        if (door_joint == null)
+        {
+            Debug.LogError("OvenHandicap: No ConfigurableJoint found!");
+            enabled = false;
+            return;
+        }
+
         hits_required = Random.Range(min_hits, max_hits + 1);
         Debug.Log($"Oven handicap active. Needs {hits_required} hits to unlock door.");
 
-        if (door_hinge != null)
-        {
-            original_limits = door_hinge.limits;
-            JointLimits locked_limits = original_limits;
-            locked_limits.min = 0;
-            locked_limits.max = 0;
-            door_hinge.limits = locked_limits;
-        }
+        // Guardar moviments originals
+        original_x = door_joint.xMotion;
+        original_y = door_joint.yMotion;
+        original_z = door_joint.zMotion;
+        original_ax = door_joint.angularXMotion;
+        original_ay = door_joint.angularYMotion;
+        original_az = door_joint.angularZMotion;
+
+        // Bloquejar tots els eixos
+        door_joint.xMotion = ConfigurableJointMotion.Locked;
+        door_joint.yMotion = ConfigurableJointMotion.Locked;
+        door_joint.zMotion = ConfigurableJointMotion.Locked;
+        door_joint.angularXMotion = ConfigurableJointMotion.Locked;
+        door_joint.angularYMotion = ConfigurableJointMotion.Locked;
+        door_joint.angularZMotion = ConfigurableJointMotion.Locked;
 
         if (hit_feedback_object == null) hit_feedback_object = gameObject;
         feedback_renderer = hit_feedback_object.GetComponent<MeshRenderer>();
@@ -52,19 +68,11 @@ public class OvenHandicap : MonoBehaviour, IHandicap
         if (resolved) return;
         if (collision.gameObject.CompareTag(hit_tag))
         {
-            if (hit_detection_point != null)
-            {
-                float dist = Vector3.Distance(collision.contacts[0].point, hit_detection_point.position);
-                if (dist > 0.3f) return;
-            }
-
             current_hits++;
             Debug.Log($"Oven hit! {current_hits}/{hits_required}");
             FlashRed();
             if (current_hits >= hits_required)
-            {
                 Resolve();
-            }
         }
     }
 
@@ -87,14 +95,16 @@ public class OvenHandicap : MonoBehaviour, IHandicap
     {
         if (resolved) return;
         resolved = true;
-
-        if (door_hinge != null)
-        {
-            door_hinge.limits = original_limits;
-            Debug.Log("Oven door unlocked!");
-        }
-
-        HandicapManager.instance.RemoveHandicap(this);
-        Debug.Log("Oven handicap resolved.");
+        // Restaurar moviments originals
+        door_joint.xMotion = original_x;
+        door_joint.yMotion = original_y;
+        door_joint.zMotion = original_z;
+        door_joint.angularXMotion = original_ax;
+        door_joint.angularYMotion = original_ay;
+        door_joint.angularZMotion = original_az;
+        Debug.Log("Oven door unlocked!");
+        HandicapManager.instance.RemoveHandicap(this); // Atenció: RemoveHandicap espera que l'handicap estigui a la llista; però aquest no hi és perquè no es va afegir via SpawnRandomHandicap. Hauràs de gestionar-ho a part.
+        // En lloc de RemoveHandicap, simplement pots desactivar aquest script.
+        enabled = false;
     }
 }

@@ -126,9 +126,7 @@ public class RatHandicap : MonoBehaviour, IHandicap
             Debug.Log($"Rat hit! {current_hits}/{hits_required}");
             FlashRed();
             if (current_hits >= hits_required)
-            {
                 Resolve();
-            }
         }
     }
 

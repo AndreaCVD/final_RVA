@@ -22,6 +22,9 @@ public class Timer : MonoBehaviour
     public string animationTriggerName = "TimeOut";
     public UnityEvent onTimeFinished;
 
+    [Header("Events")]
+    public UnityEvent onOrderStarted;
+
     private void Start()
     {
         day_started = false;
@@ -39,19 +42,17 @@ public class Timer : MonoBehaviour
     {
         if (!day_started && !time_finished) return;
 
-
         cuenta_atras -= Time.deltaTime;
         cuenta_atras = Mathf.Max(cuenta_atras, 0f); //Nunca bajara de 0
 
         barra_contador.fillAmount = 1f - cuenta_atras / MAX_cuenta;
         UpdateTimerText();
 
-        if(cuenta_atras <= 0f)
+        if (cuenta_atras <= 0f)
         {
             time_finished = true;
             HandleTimeOut();
         }
-
     }
 
     private void UpdateTimerText()
@@ -64,16 +65,16 @@ public class Timer : MonoBehaviour
 
         // Si el tiempo es menor de 60s muestra solo segundos: "28"
         // Si es mayor muestra "1:05"
-        if (MAX_cuenta < 60f) 
+        if (MAX_cuenta < 60f)
         {
             timerText.text = sec.ToString("00");
         }
-        else 
-        { 
+        else
+        {
             timerText.text = $"{min}:{sec:00}";
 
-        // Cambia color a rojo cuando queda menos del 25%
-        timerText.color = (cuenta_atras / MAX_cuenta < 0.25f) ? Color.red : Color.white;
+            // Cambia color a rojo cuando queda menos del 25%
+            timerText.color = (cuenta_atras / MAX_cuenta < 0.25f) ? Color.red : Color.white;
         }
     }
 
@@ -98,10 +99,13 @@ public class Timer : MonoBehaviour
         MAX_cuenta = seconds;
         cuenta_atras = seconds;
         time_finished = false;
-        day_started = true; //comienza al recibir el tiempo
+        day_started = true;
         barra_contador.fillAmount = 0f;
-
         UpdateTimerText();
+        Debug.Log("Timer: SetTime llamado, invocando onOrderStarted");
+        onOrderStarted?.Invoke();
+
+
     }
 
     /*public void Countdown()

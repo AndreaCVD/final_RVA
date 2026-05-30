@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class LevelController : MonoBehaviour
 {
+    public Recipe recetaActual;
+
     [Header("Configuració del nivell")]
     public float timePerNPC = 30f;
     public int totalNPCs = 5;
@@ -63,6 +65,7 @@ public class LevelController : MonoBehaviour
             Debug.LogWarning("No hi ha receptes disponibles al LevelController!");
 
         npcSpawnedCount++;
+        recetaActual = recipe;
         Debug.Log($"NPC {npcSpawnedCount}/{totalNPCs} spawnejat amb recepta: {recipe?.recipeName}");
 
         //Comenzar el timer

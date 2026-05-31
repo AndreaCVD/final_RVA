@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class StateHandler : MonoBehaviour
 {
-    public Material rawMaterial;
     public Material cookedMaterial;
     public Material burnedMaterial;
 
@@ -13,7 +12,6 @@ public class StateHandler : MonoBehaviour
     void Start()
     {
         rend = GetComponent<Renderer>();
-        rend.material = rawMaterial;
     }
 
     void Update()

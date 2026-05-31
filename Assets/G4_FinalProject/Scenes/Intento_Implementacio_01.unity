@@ -879,19 +879,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6051467600681310450, guid: 263cec7e07f0f564d95acb94a1de2f12, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.026585957
       objectReference: {fileID: 0}
     - target: {fileID: 6051467600681310450, guid: 263cec7e07f0f564d95acb94a1de2f12, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6051467600681310450, guid: 263cec7e07f0f564d95acb94a1de2f12, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.9996466
       objectReference: {fileID: 0}
     - target: {fileID: 6051467600681310450, guid: 263cec7e07f0f564d95acb94a1de2f12, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6051467600681310450, guid: 263cec7e07f0f564d95acb94a1de2f12, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -899,7 +899,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6051467600681310450, guid: 263cec7e07f0f564d95acb94a1de2f12, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -176.953
       objectReference: {fileID: 0}
     - target: {fileID: 6051467600681310450, guid: 263cec7e07f0f564d95acb94a1de2f12, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -6644,7 +6644,7 @@ PrefabInstance:
       objectReference: {fileID: 1460266263}
     - target: {fileID: 4287430209962531252, guid: 447a4db4df714f24e8314d3d4212ced7, type: 3}
       propertyPath: m_InteractionLayers.m_Bits
-      value: 64
+      value: 536870912
       objectReference: {fileID: 0}
     - target: {fileID: 4287430209962531252, guid: 447a4db4df714f24e8314d3d4212ced7, type: 3}
       propertyPath: m_ParentInteractableObject
@@ -6708,6 +6708,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5777783727794311057, guid: 447a4db4df714f24e8314d3d4212ced7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807300642971680349, guid: 447a4db4df714f24e8314d3d4212ced7, type: 3}
+      propertyPath: m_Colliders.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807300642971680349, guid: 447a4db4df714f24e8314d3d4212ced7, type: 3}
+      propertyPath: m_InteractionLayers.m_Bits
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6585704238012568875, guid: 447a4db4df714f24e8314d3d4212ced7, type: 3}
@@ -11896,7 +11904,7 @@ GameObject:
   - component: {fileID: 3477920775098367689}
   - component: {fileID: 1338111074707874814}
   - component: {fileID: 4160415772741144636}
-  m_Layer: 10
+  m_Layer: 5
   m_Name: BasePizza
   m_TagString: Pizza
   m_Icon: {fileID: 0}
@@ -13542,7 +13550,7 @@ GameObject:
   - component: {fileID: 4472500081911247994}
   - component: {fileID: 7578824788138079968}
   - component: {fileID: 5552514018282892053}
-  m_Layer: 10
+  m_Layer: 5
   m_Name: PizzaSocket
   m_TagString: Pizza
   m_Icon: {fileID: 0}
@@ -14080,7 +14088,7 @@ MonoBehaviour:
   m_InteractionManager: {fileID: 0}
   m_Colliders: []
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 4294967295
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -15299,7 +15307,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 227151753028893438}
-  m_Layer: 10
+  m_Layer: 5
   m_Name: Attach
   m_TagString: Untagged
   m_Icon: {fileID: 0}

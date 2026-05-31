@@ -184,6 +184,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: OnePeperoni
       objectReference: {fileID: 0}
+    - target: {fileID: 5053763092986458895, guid: 16961f4405c594d4c8247cd45bd1db16, type: 3}
+      propertyPath: m_TagString
+      value: Ingredient
+      objectReference: {fileID: 0}
     - target: {fileID: 7305459611964891193, guid: 16961f4405c594d4c8247cd45bd1db16, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.4309847

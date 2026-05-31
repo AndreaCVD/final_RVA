@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 5189431849198314684}
   m_Layer: 0
   m_Name: Parmesano
-  m_TagString: Untagged
+  m_TagString: Ingredient
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31,9 +31,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8903444550924648917}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.00000001948056, y: 0.45336327, z: -0.000000009908573, w: 0.89132583}
+  m_LocalRotation: {x: 0, y: 0.45336047, z: 0, w: 0.8913273}
   m_LocalPosition: {x: -1.881, y: 2.6025, z: -19.7996}
-  m_LocalScale: {x: 0.05717809, y: 0.1672989, z: 0.039903436}
+  m_LocalScale: {x: 0.00040056393, y: 0.0012887388, z: 0.00029194637}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

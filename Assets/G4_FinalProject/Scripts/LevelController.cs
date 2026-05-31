@@ -98,4 +98,9 @@ public class LevelController : MonoBehaviour
 
         SpawnNextNPC(); // entra el seguent
     }
+
+    public void DismissAnim()
+    {
+        currentNPC.AnimClient();
+    }
 }

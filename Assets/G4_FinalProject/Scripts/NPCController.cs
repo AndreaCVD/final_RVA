@@ -43,4 +43,10 @@ public class NPCController : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
+
+    public void AnimClient()
+    {
+        Animator anim = gameObject.GetComponent<Animator>();
+        anim.SetBool("dismiss", true);
+    }
 }

@@ -64,6 +64,6 @@ public class CompareCommand : MonoBehaviour
         Debug.Log("Se cierra la caja de entrega");
         Debug.Log("Se destruye la pizza");
         Destroy(pizzaEntregada);
-
+        levelController.DismissAnim();
     }
 }

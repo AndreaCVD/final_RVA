@@ -4227,9 +4227,17 @@ PrefabInstance:
       value: --World Management--
       objectReference: {fileID: 0}
     - target: {fileID: 5531487887436460717, guid: 92889bf45b8c2e445a35cea73b4a4134, type: 3}
+      propertyPath: pizza
+      value: 
+      objectReference: {fileID: 734330777732023153, guid: 91e7534427245a64a82a002bb21a3d06, type: 3}
+    - target: {fileID: 5531487887436460717, guid: 92889bf45b8c2e445a35cea73b4a4134, type: 3}
       propertyPath: world_manager
       value: 
       objectReference: {fileID: 1794816769}
+    - target: {fileID: 5531487887436460717, guid: 92889bf45b8c2e445a35cea73b4a4134, type: 3}
+      propertyPath: pizza_position
+      value: 
+      objectReference: {fileID: 1191473482}
     - target: {fileID: 5877945222939806500, guid: 92889bf45b8c2e445a35cea73b4a4134, type: 3}
       propertyPath: grup
       value: 
@@ -5759,7 +5767,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8547411497787079857, guid: e4c3f0966b05f3b4da35957d51232480, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6634,6 +6642,18 @@ PrefabInstance:
       propertyPath: m_AttachTransform
       value: 
       objectReference: {fileID: 1460266263}
+    - target: {fileID: 4287430209962531252, guid: 447a4db4df714f24e8314d3d4212ced7, type: 3}
+      propertyPath: m_InteractionLayers.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 4287430209962531252, guid: 447a4db4df714f24e8314d3d4212ced7, type: 3}
+      propertyPath: m_ParentInteractableObject
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4287430209962531252, guid: 447a4db4df714f24e8314d3d4212ced7, type: 3}
+      propertyPath: m_AutoFindParentInteractableInHierarchy
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5286029544420877726, guid: 447a4db4df714f24e8314d3d4212ced7, type: 3}
       propertyPath: referenciaDestino
       value: 
@@ -9232,8 +9252,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2fac4e6731321445af53ea3a901d098, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grup: {fileID: 0}
-  barra_contador: {fileID: 0}
+  grup: {fileID: 913881335}
+  barra_contador: {fileID: 641128588}
   timerText: {fileID: 1009205597}
   cuenta_atras: 100
   MAX_cuenta: 100
@@ -11876,7 +11896,7 @@ GameObject:
   - component: {fileID: 3477920775098367689}
   - component: {fileID: 1338111074707874814}
   - component: {fileID: 4160415772741144636}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BasePizza
   m_TagString: Pizza
   m_Icon: {fileID: 0}
@@ -13522,7 +13542,7 @@ GameObject:
   - component: {fileID: 4472500081911247994}
   - component: {fileID: 7578824788138079968}
   - component: {fileID: 5552514018282892053}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PizzaSocket
   m_TagString: Pizza
   m_Icon: {fileID: 0}
@@ -14738,7 +14758,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 734330779048001092}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 19bb49f87a9f43d45aecc4ef3760421e, type: 3}
   m_Name: 
@@ -15279,7 +15299,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 227151753028893438}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Attach
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18888,6 +18908,6 @@ SceneRoots:
   - {fileID: 1363151065}
   - {fileID: 2050834442047908333}
   - {fileID: 1146940426}
+  - {fileID: 106693719632831742}
   - {fileID: 391179449}
   - {fileID: 1191473482}
-  - {fileID: 106693719632831742}

@@ -1,9 +1,14 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class ScriptsManager : MonoBehaviour
 {
-    //Las cosas que no se van a destruir
+    [Header("Script que no se destruye")]
     [SerializeField] GameObject world_manager;
+
+    [Header("Script que no se destruye")]
+    [SerializeField] GameObject pizza;
+    [SerializeField] Transform pizza_position;
 
     void Awake()
     {
@@ -17,6 +22,14 @@ public class ScriptsManager : MonoBehaviour
         {
             GameObject new_obj = GameObject.Find("--World Management--");
             DontDestroyOnLoad(new_obj);
+        }
+    }
+
+    private void Update()
+    {
+        if (!GameObject.Find("BasePizza") && !GameObject.Find("BasePizza(Clone)"))
+        {
+            Instantiate(pizza, pizza_position.position, pizza_position.rotation);
         }
     }
 }

@@ -19,6 +19,7 @@ TagManager:
   - SpriteOregan
   - Oregan
   - Rata
+  - ReferenciaPizza
   layers:
   - Default
   - TransparentFX

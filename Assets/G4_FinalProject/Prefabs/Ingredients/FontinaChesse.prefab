@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 5180432017352036649}
   m_Layer: 0
   m_Name: FontinaChesse
-  m_TagString: Untagged
+  m_TagString: Ingredient
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -280,7 +280,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f98ad09f4465ca48b49d73d21de9a25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rawMaterial: {fileID: 0}
   cookedMaterial: {fileID: 0}
   burnedMaterial: {fileID: 0}
 --- !u!114 &5180432017352036649

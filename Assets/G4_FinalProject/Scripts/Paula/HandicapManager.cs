@@ -15,6 +15,9 @@ public class HandicapManager : MonoBehaviour
     [Header("Penalty per unresolved handicap")]
     [SerializeField] private int penalty_per_unresolved = 20;
 
+    [Header("Max unresolved handicaps allowed at once")]
+    [SerializeField] private int max_unresolved_handicaps = 2;
+
     private List<IHandicap> active_handicaps = new List<IHandicap>();
 
     private void Awake()
@@ -23,11 +26,25 @@ public class HandicapManager : MonoBehaviour
         else Destroy(gameObject);
     }
 
+    public int GetUnresolvedCount()
+    {
+        int count = 0;
+        foreach (var h in active_handicaps)
+            if (!h.is_resolved) count++;
+        return count;
+    }
+
     public void SpawnRandomHandicap()
     {
         if (handicap_prefabs == null || handicap_prefabs.Length == 0)
         {
             Debug.LogWarning("No handicap prefabs assigned.");
+            return;
+        }
+
+        if (GetUnresolvedCount() >= max_unresolved_handicaps)
+        {
+            Debug.Log($"Max unresolved handicaps reached ({max_unresolved_handicaps}). Not spawning new one.");
             return;
         }
 

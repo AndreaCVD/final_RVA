@@ -34,12 +34,11 @@ public class CompareCommand : MonoBehaviour
     private void SelectEnterEvent(SelectEnterEventArgs args)
     {
         Debug.Log("Pizza preparada per entregar");
-        MirarPizzas();
+        //MirarPizzas();
     }
 
-    public void MirarPizzas()
+    public void MirarPizzas(GameObject pizzaEntregada)
     {
-        GameObject pizzaEntregada = GameObject.Find("BasePizza");
         GameObject ingredientesEntregados = GameObject.Find("PizzaSocket");
 
         if (pizzaEntregada == null || ingredientesEntregados == null)

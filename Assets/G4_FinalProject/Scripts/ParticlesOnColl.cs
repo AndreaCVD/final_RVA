@@ -5,14 +5,17 @@ public class ParticlesOnColl : MonoBehaviour
     public GameObject MeshPizza;
     public Material TomatoSauce;
     public Material WhiteSauce;
-    public GameObject pepperPrefab;
-    public GameObject oreganPrefab;
+    //public GameObject pepperPrefab;
+    //public GameObject oreganPrefab;
     public Transform attachPizza;
+    public GameObject PizzaSocket;
+    public GameObject EmptyTomatoeSauce;
+    public GameObject EmptyWhiteSauce;
 
     private bool Tomatoe = false;
     private bool White = false;
-    private bool Pepper = false;
-    private bool Oregan = false;
+    //private bool Pepper = false;
+    //private bool Oregan = false;
 
     private void OnParticleCollision(GameObject other)
     {
@@ -29,6 +32,14 @@ public class ParticlesOnColl : MonoBehaviour
                 mats[1] = TomatoSauce;
                 MeshPizza.GetComponent<MeshRenderer>().materials = mats;
                 Tomatoe = true;
+
+                if (PizzaSocket != null && EmptyTomatoeSauce != null)
+                {
+                    GameObject tomatoSauceObject = Instantiate(EmptyTomatoeSauce, PizzaSocket.transform.position, Quaternion.identity);
+                    tomatoSauceObject.transform.SetParent(PizzaSocket.transform);
+                    tomatoSauceObject.transform.localPosition = Vector3.zero;
+                    tomatoSauceObject.transform.localRotation = Quaternion.identity;
+                }
             }
             else
             {
@@ -45,6 +56,14 @@ public class ParticlesOnColl : MonoBehaviour
                 mats[1] = WhiteSauce;
                 MeshPizza.GetComponent<MeshRenderer>().materials = mats;
                 White = true;
+
+                if (PizzaSocket != null && EmptyWhiteSauce != null)
+                {
+                    GameObject whiteSauceObject = Instantiate(EmptyWhiteSauce, PizzaSocket.transform.position, Quaternion.identity);
+                    whiteSauceObject.transform.SetParent(PizzaSocket.transform);
+                    whiteSauceObject.transform.localPosition = Vector3.zero;
+                    whiteSauceObject.transform.localRotation = Quaternion.identity;
+                }
             }
         }
             /*else if (other.CompareTag("Pepper"))

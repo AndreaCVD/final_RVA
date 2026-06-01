@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   recipeName: 
   ingredients:
-  - TomatoSauce
+  - TomatoeSauce
   - MOzarella

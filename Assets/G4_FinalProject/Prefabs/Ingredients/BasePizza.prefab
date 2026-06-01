@@ -286,9 +286,10 @@ MonoBehaviour:
   MeshPizza: {fileID: 734330777732023153}
   TomatoSauce: {fileID: 2100000, guid: 0c7a6c57510c180408a4083785f54dae, type: 2}
   WhiteSauce: {fileID: 2100000, guid: 7458eb815b50338468126888226d5e31, type: 2}
-  pepperPrefab: {fileID: 5063920584660688033, guid: 3871debe073a78f41829e51cae312d82, type: 3}
-  oreganPrefab: {fileID: 3520682673133195167, guid: 6ca0160d18fac0442929d8ef98efafb7, type: 3}
   attachPizza: {fileID: 227151751729694667}
+  PizzaSocket: {fileID: 2786049127539139069}
+  EmptyTomatoeSauce: {fileID: 8299803350555569790, guid: b0fd3db511a098442bf93f0c1e1d6d76, type: 3}
+  EmptyWhiteSauce: {fileID: 536406767851171160, guid: 52573964201efb3489c0295b08036411, type: 3}
 --- !u!114 &4160415773589449993
 MonoBehaviour:
   m_ObjectHideFlags: 0

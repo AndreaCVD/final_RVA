@@ -13,8 +13,6 @@ public class CompareCommand : MonoBehaviour
     public HandicapOrderManager orderManager; // Arrossegar manualment
     private HandicapManager handicapManager;
 
-    public AudioClip pizzaEntregadaClip;
-
     private void Start()
     {
         levelController = GetComponent<LevelController>();
@@ -103,11 +101,6 @@ public class CompareCommand : MonoBehaviour
         // Aturar spawn de handicaps
         if (orderManager != null)
             orderManager.OnOrderFinished();
-
-        AudioSource.PlayClipAtPoint(
-            pizzaEntregadaClip,
-            Camera.main.transform.position
-        );
 
         // Destruir pizza
         Destroy(pizzaEntregada);

@@ -7,18 +7,18 @@ public class NPCController : MonoBehaviour
     public Transform commandDisplay;
     public float slotSpacing = 0.3f;
 
-    public int customersCounter = 0;
-
     [HideInInspector] public List<string> currentOrder = new List<string>();
 
-    // LevelController crida aixï¿½ en el moment del spawn
+    // LevelController crida això en el moment del spawn
     public void SetOrder(Recipe recipe, List<GameObject> prefabs)
     {
+        //Aqui pasa el recipe i puede llamar a Ticket para hacer display ticket
+        //DebugLog recipe
         currentOrder = new List<string>(recipe.ingredients);
         DisplayOrder(prefabs);
     }
 
-    void DisplayOrder(List<GameObject> prefabs)
+    void DisplayOrder(List<GameObject> prefabs) //no hace nada???
     {
         foreach (Transform child in commandDisplay)
             Destroy(child.gameObject);
@@ -41,8 +41,14 @@ public class NPCController : MonoBehaviour
         }
     }
 
-    public void DismissClient()
+    public void DismissClient() //se llama??
     {
-        gameObject.SetActive(false);
+        gameObject.SetActive(false); 
+    }
+
+    public void AnimClient() //coge animator NpC - marxa
+    {
+        Animator anim = gameObject.GetComponent<Animator>();
+        anim.SetBool("dismiss", true);
     }
 }

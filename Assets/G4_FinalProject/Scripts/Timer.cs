@@ -18,17 +18,12 @@ public class Timer : MonoBehaviour
     public bool day_started;
 
     [Header("Al acabar el timer")]
-    public Animator animator;
+    public Animator animator; //este animator es de? 
     public string animationTriggerName = "TimeOut";
     public UnityEvent onTimeFinished;
 
-    [SerializeField] private GameObject ticketPanel;
-
-    [SerializeField] private TMP_Text scoreText;
-    [SerializeField] private TMP_Text moneyText;
-    [SerializeField] private TMP_Text customersText;
-    public ScoreManager scoreManager;
-    public NPCController npcController;
+    [Header("Events")]
+    public UnityEvent onOrderStarted;
 
     private void Start()
     {
@@ -47,19 +42,17 @@ public class Timer : MonoBehaviour
     {
         if (!day_started && !time_finished) return;
 
-
         cuenta_atras -= Time.deltaTime;
         cuenta_atras = Mathf.Max(cuenta_atras, 0f); //Nunca bajara de 0
 
         barra_contador.fillAmount = 1f - cuenta_atras / MAX_cuenta;
         UpdateTimerText();
 
-        if(cuenta_atras <= 0f)
+        if (cuenta_atras <= 0f)
         {
             time_finished = true;
             HandleTimeOut();
         }
-
     }
 
     private void UpdateTimerText()
@@ -72,16 +65,16 @@ public class Timer : MonoBehaviour
 
         // Si el tiempo es menor de 60s muestra solo segundos: "28"
         // Si es mayor muestra "1:05"
-        if (MAX_cuenta < 60f) 
+        if (MAX_cuenta < 60f)
         {
             timerText.text = sec.ToString("00");
         }
-        else 
-        { 
+        else
+        {
             timerText.text = $"{min}:{sec:00}";
 
-        // Cambia color a rojo cuando queda menos del 25%
-        timerText.color = (cuenta_atras / MAX_cuenta < 0.25f) ? Color.red : Color.white;
+            // Cambia color a rojo cuando queda menos del 25%
+            timerText.color = (cuenta_atras / MAX_cuenta < 0.25f) ? Color.red : Color.white;
         }
     }
 
@@ -93,32 +86,21 @@ public class Timer : MonoBehaviour
             timerText.color = Color.red;
         }
 
-        // Lanza la animaciï¿½n si hay un Animator asignado
-        if (animator != null)
-            animator.SetTrigger(animationTriggerName);
+        // Lanza la animación si hay un Animator asignado
+        //lee la scene y encuentra al npc
+        if (animator == null)
+        {
+            GameObject npcObject = GameObject.Find("CLIENTE"); 
+            Animator anim = npcObject.GetComponent<Animator>();
+            anim.SetBool("dismiss", true);
+        }
+        else
+        {
+            animator.SetBool("dismiss",true);
+        }
 
-        // Llama a la funciï¿½n externa (instanciar modelo, etc.)
-        onTimeFinished?.Invoke();
-
-        //UI Ticket puntuaciÃ³
-        ShowTicket();
-    }
-
-
-    private void ShowTicket()
-    {
-        // Obrir UI
-        ticketPanel.SetActive(true);
-
-        // Omplir textos
-        scoreText.text = scoreManager.total_points.ToString();
-
-        moneyText.text = scoreManager.total_points*0.87 + "â‚¬";
-
-        customersText.text = npcController.customersCounter.ToString();
-
-        // Opcional: pausar joc
-        Time.timeScale = 0f;
+         // Llama a la función externa (instanciar modelo, etc.)
+         onTimeFinished?.Invoke();
     }
 
     public void SetTime(float seconds)
@@ -126,10 +108,13 @@ public class Timer : MonoBehaviour
         MAX_cuenta = seconds;
         cuenta_atras = seconds;
         time_finished = false;
-        day_started = true; //comienza al recibir el tiempo
+        day_started = true;
         barra_contador.fillAmount = 0f;
-
         UpdateTimerText();
+        Debug.Log("Timer: SetTime llamado, invocando onOrderStarted");
+        onOrderStarted?.Invoke();
+
+
     }
 
     /*public void Countdown()

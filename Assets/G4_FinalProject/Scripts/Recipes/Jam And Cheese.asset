@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   recipeName: "Jam\xF3n y queso"
   ingredients:
-  - ingredient_02
-  - ingredient_03
+  - Bacon
+  - MOzzarella
+  - TomatoeSauce

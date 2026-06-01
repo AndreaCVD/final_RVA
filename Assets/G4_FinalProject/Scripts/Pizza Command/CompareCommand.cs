@@ -111,7 +111,7 @@ public class CompareCommand : MonoBehaviour
 
         // Destruir pizza
         Destroy(pizzaEntregada);
-        levelController.DismissAnim();
+        //levelController.DismissAnim();
         levelController.OnClientDismissed();
     }
 

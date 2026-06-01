@@ -42,7 +42,7 @@ public class LevelController : MonoBehaviour
         StartCoroutine(WaitForBlindsAndSpawn());
     }
 
-    public void SpawnNextNPC()
+    public void SpawnNextNPC() 
     {
         if (npcSpawnedCount >= totalNPCs)
         {
@@ -52,6 +52,7 @@ public class LevelController : MonoBehaviour
 
         // Instancia el NPC al spawnPoint
         GameObject npcObject = Instantiate(npcPrefab, spawnPoint.position, spawnPoint.rotation);
+        npcObject.name = "CLIENTE";
         currentNPC = npcObject.GetComponent<NPCController>();
 
         // Assigna CommandDisplay (referència de l'escena)
@@ -91,16 +92,12 @@ public class LevelController : MonoBehaviour
     }
 
     // --- Cridat pel Timer o Validació quan el NPC marxa ---
-    public void OnClientDismissed()
+    public void OnClientDismissed() //
     {
         if (currentNPC != null)
             currentNPC.DismissClient(); //aquest va a NPC controller - enable false
 
-        SpawnNextNPC(); // entra el seguent
+        SpawnNextNPC(); // busca un npc (activo), y instancia uno nuevo si no
     }
 
-    public void DismissAnim() //quan es truca dissmissanim?
-    {
-        currentNPC.AnimClient();
-    }
 }

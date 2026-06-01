@@ -7458,6 +7458,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3459829090515833153, guid: 4ccb2e24037f936488ea3a54d1bdda64, type: 3}
+      propertyPath: 'Dialogs.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 37a14d823d3ba2645809f9adc2f04fac, type: 3}
+    - target: {fileID: 3459829090515833153, guid: 4ccb2e24037f936488ea3a54d1bdda64, type: 3}
+      propertyPath: 'Dialogs.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 8b9cbb0aa71f9f14180d1416c3b4aa9b, type: 3}
     - target: {fileID: 7359840448886237752, guid: 4ccb2e24037f936488ea3a54d1bdda64, type: 3}
       propertyPath: m_Enabled
       value: 0

@@ -13,9 +13,12 @@ public class InGameMenu : MonoBehaviour
     public GameObject overlayTicket_margarita;
 
     public InputActionReference showOverlay_Libro;
-    public InputActionReference showOverlay_Ticket_;
+    public InputActionReference showOverlay_Ticket_carbonara;
+    public InputActionReference showOverlay_Ticket_quesos;
+    public InputActionReference showOverlay_Ticket_jamon;
+    public InputActionReference showOverlay_Ticket_margarita;
 
-    public LevelController pizza; //para acceder a la pizza
+    [SerializeField] LevelController pizza; //para acceder a la pizza
 
     private bool paused;
     private void Start()
@@ -28,16 +31,35 @@ public class InGameMenu : MonoBehaviour
         showOverlay_Libro.action.performed += TogglePause_Libro;
         showOverlay_Libro.action.Enable();
 
-        showOverlay_Ticket_.action.performed += TogglePause_Ticket;
-        showOverlay_Ticket_.action.Enable();
+
+        showOverlay_Ticket_carbonara.action.performed += TogglePause_Ticket;
+        showOverlay_Ticket_carbonara.action.Enable();
+
+        showOverlay_Ticket_quesos.action.performed += TogglePause_Ticket;
+        showOverlay_Ticket_quesos.action.Enable();
+
+        showOverlay_Ticket_jamon.action.performed += TogglePause_Ticket;
+        showOverlay_Ticket_jamon.action.Enable();
+
+        showOverlay_Ticket_margarita.action.performed += TogglePause_Ticket;
+        showOverlay_Ticket_margarita.action.Enable();
     }
     private void OnDisable()
     {
         showOverlay_Libro.action.performed -= TogglePause_Libro;
         showOverlay_Libro.action.Disable();
 
-        showOverlay_Ticket_.action.performed -= TogglePause_Ticket;
-        showOverlay_Ticket_.action.Disable();
+        showOverlay_Ticket_carbonara.action.performed -= TogglePause_Ticket;
+        showOverlay_Ticket_carbonara.action.Disable();
+
+        showOverlay_Ticket_quesos.action.performed -= TogglePause_Ticket;
+        showOverlay_Ticket_quesos.action.Disable();
+
+        showOverlay_Ticket_jamon.action.performed -= TogglePause_Ticket;
+        showOverlay_Ticket_jamon.action.Disable();
+
+        showOverlay_Ticket_margarita.action.performed -= TogglePause_Ticket;
+        showOverlay_Ticket_margarita.action.Disable();
     }
 
     private void TogglePause_Libro(InputAction.CallbackContext context)
@@ -81,25 +103,26 @@ public class InGameMenu : MonoBehaviour
     {
         paused = true;
 
+        string receta = pizza.recetaActual.recipeName;
         //switch que comprueve el tipo de pizza que se ha pedido y abre el overlay correspontiente
-        //switch (/*pizza*/)
-        //{
-        //    case pizza1:
-        //        overlayTicket_carbonara.SetActive(true);
-        //        break;
+        switch (receta)
+        {
+            case "Carbonara":
+                overlayTicket_carbonara.SetActive(true);
+                break;
 
-        //    case pizza1:
-        //        overlayTicket_quesos.SetActive(true);
-        //        break;
+            case "Cuatro Quesos":
+                overlayTicket_quesos.SetActive(true);
+                break;
 
-        //    case pizza1:
-        //        overlayTicket_jamon.SetActive(true);
-        //        break;
+            case "Jamón y queso":
+                overlayTicket_jamon.SetActive(true);
+                break;
 
-        //    case pizza1:
-        //        overlayTicket_margarita.SetActive(true);
-        //        break;
-        //}
+            case "Margarita":
+                overlayTicket_margarita.SetActive(true);
+                break;
+        }
     }
 
     public void ContinueGame_Ticket()

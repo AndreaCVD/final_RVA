@@ -22,6 +22,14 @@ public class Timer : MonoBehaviour
     public string animationTriggerName = "TimeOut";
     public UnityEvent onTimeFinished;
 
+    [SerializeField] private GameObject ticketPanel;
+
+    [SerializeField] private TMP_Text scoreText;
+    [SerializeField] private TMP_Text moneyText;
+    [SerializeField] private TMP_Text customersText;
+    public ScoreManager scoreManager;
+    public NPCController npcController;
+
     private void Start()
     {
         day_started = false;
@@ -85,12 +93,32 @@ public class Timer : MonoBehaviour
             timerText.color = Color.red;
         }
 
-        // Lanza la animación si hay un Animator asignado
+        // Lanza la animaciï¿½n si hay un Animator asignado
         if (animator != null)
             animator.SetTrigger(animationTriggerName);
 
-        // Llama a la función externa (instanciar modelo, etc.)
+        // Llama a la funciï¿½n externa (instanciar modelo, etc.)
         onTimeFinished?.Invoke();
+
+        //UI Ticket puntuaciÃ³
+        ShowTicket();
+    }
+
+
+    private void ShowTicket()
+    {
+        // Obrir UI
+        ticketPanel.SetActive(true);
+
+        // Omplir textos
+        scoreText.text = scoreManager.total_points.ToString();
+
+        moneyText.text = scoreManager.total_points*0.87 + "â‚¬";
+
+        customersText.text = npcController.customersCounter.ToString();
+
+        // Opcional: pausar joc
+        Time.timeScale = 0f;
     }
 
     public void SetTime(float seconds)

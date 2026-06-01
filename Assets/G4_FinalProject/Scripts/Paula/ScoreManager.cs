@@ -3,7 +3,7 @@ using UnityEngine;
 public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager instance;
-    private int total_points = 0;
+    public int total_points = 0;
 
     private void Awake()
     {

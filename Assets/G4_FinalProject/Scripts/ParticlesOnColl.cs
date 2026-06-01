@@ -16,58 +16,62 @@ public class ParticlesOnColl : MonoBehaviour
 
     private void OnParticleCollision(GameObject other)
     {
-        Debug.Log($"Hay colision con: {other?.name}");
+        //Debug.Log($"Hay colision con: {other?.name}");
         if (other.CompareTag("SalsaTomatoe"))
         {
-            if(Tomatoe == true)
+            if (Tomatoe) return;
+
+            // Obtener el array actual de materiales
+            Material[] mats = MeshPizza.GetComponent<MeshRenderer>().materials;
+            // Asegurar que exista al menos índice 1
+            if (mats.Length > 1)
             {
-                return;
+                mats[1] = TomatoSauce;
+                MeshPizza.GetComponent<MeshRenderer>().materials = mats;
+                Tomatoe = true;
             }
             else
             {
-                MeshPizza.GetComponent<MeshRenderer>().material = TomatoSauce;
-                Tomatoe = true;
+                Debug.LogWarning("El MeshRenderer no tiene material en índice 1");
             }
-                
         }
         else if (other.CompareTag("WitheSauce"))
         {
-            if (White == true)
+            if (White) return;
+
+            Material[] mats = MeshPizza.GetComponent<MeshRenderer>().materials;
+            if (mats.Length > 1)
             {
-                return;
-            }
-            else
-            {
-                MeshPizza.GetComponent<MeshRenderer>().material = WhiteSauce;
+                mats[1] = WhiteSauce;
+                MeshPizza.GetComponent<MeshRenderer>().materials = mats;
                 White = true;
             }
-                
         }
-        else if (other.CompareTag("Pepper"))
-        {
-            if (Pepper == true)
+            /*else if (other.CompareTag("Pepper"))
             {
-                return;
+                if (Pepper == true)
+                {
+                    return;
+                }
+                else
+                {
+                    Pepper = true;
+                    //instanciar Sprite Pimienta i donarli el 
+                    //AttachPizza transform + rotation + scale
+                    GameObject newPepper = Instantiate(pepperPrefab, attachPizza.position, Quaternion.Euler(-90, 0, 0));
+                }
             }
-            else
+            else if (other.CompareTag("Oregan"))
             {
-                Pepper = true;
-                //instanciar Sprite Pimienta i donarli el 
-                //AttachPizza transform + rotation + scale
-                GameObject newPepper = Instantiate(pepperPrefab, attachPizza.position, Quaternion.Euler(-90, 0, 0));
-            }
-        }
-        else if (other.CompareTag("Oregan"))
-        {
-            if (Oregan == true)
-            {
-                return;
-            }
-            else
-            {
-                Oregan = true;
-                GameObject newPepper = Instantiate(oreganPrefab, attachPizza.position, Quaternion.Euler(-90, 0, 0));
-            }
-        }
+                if (Oregan == true)
+                {
+                    return;
+                }
+                else
+                {
+                    Oregan = true;
+                    GameObject newPepper = Instantiate(oreganPrefab, attachPizza.position, Quaternion.Euler(-90, 0, 0));
+                }
+            }*/
     }
 }

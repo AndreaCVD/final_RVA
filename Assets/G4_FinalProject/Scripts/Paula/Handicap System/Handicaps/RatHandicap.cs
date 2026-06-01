@@ -131,7 +131,7 @@ public class RatHandicap : MonoBehaviour, IHandicap
             //if (current_hits >= hits_required)
             //    Resolve();
 
-            if (hitAudio != null)
+            if (hitClip != null)
                 AudioSource.PlayClipAtPoint(
                 hitClip,
                 transform.position

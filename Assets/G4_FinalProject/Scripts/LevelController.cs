@@ -94,12 +94,12 @@ public class LevelController : MonoBehaviour
     public void OnClientDismissed()
     {
         if (currentNPC != null)
-            currentNPC.DismissClient();
+            currentNPC.DismissClient(); //aquest va a NPC controller - enable false
 
         SpawnNextNPC(); // entra el seguent
     }
 
-    public void DismissAnim()
+    public void DismissAnim() //quan es truca dissmissanim?
     {
         currentNPC.AnimClient();
     }

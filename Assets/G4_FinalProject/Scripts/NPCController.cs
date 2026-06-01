@@ -12,11 +12,13 @@ public class NPCController : MonoBehaviour
     // LevelController crida això en el moment del spawn
     public void SetOrder(Recipe recipe, List<GameObject> prefabs)
     {
+        //Aqui pasa el recipe i puede llamar a Ticket para hacer display ticket
+        //DebugLog recipe
         currentOrder = new List<string>(recipe.ingredients);
         DisplayOrder(prefabs);
     }
 
-    void DisplayOrder(List<GameObject> prefabs)
+    void DisplayOrder(List<GameObject> prefabs) //no hace nada???
     {
         foreach (Transform child in commandDisplay)
             Destroy(child.gameObject);
@@ -39,12 +41,12 @@ public class NPCController : MonoBehaviour
         }
     }
 
-    public void DismissClient()
+    public void DismissClient() //se llama??
     {
-        gameObject.SetActive(false);
+        gameObject.SetActive(false); 
     }
 
-    public void AnimClient()
+    public void AnimClient() //coge animator NpC - marxa
     {
         Animator anim = gameObject.GetComponent<Animator>();
         anim.SetBool("dismiss", true);

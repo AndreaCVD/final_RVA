@@ -18,7 +18,7 @@ public class Timer : MonoBehaviour
     public bool day_started;
 
     [Header("Al acabar el timer")]
-    public Animator animator;
+    public Animator animator; //este animator es de? 
     public string animationTriggerName = "TimeOut";
     public UnityEvent onTimeFinished;
 
@@ -87,11 +87,20 @@ public class Timer : MonoBehaviour
         }
 
         // Lanza la animación si hay un Animator asignado
-        if (animator != null)
-            animator.SetTrigger(animationTriggerName);
+        //lee la scene y encuentra al npc
+        if (animator == null)
+        {
+            GameObject npcObject = GameObject.Find("CLIENTE"); 
+            Animator anim = npcObject.GetComponent<Animator>();
+            anim.SetBool("dismiss", true);
+        }
+        else
+        {
+            animator.SetBool("dismiss",true);
+        }
 
-        // Llama a la función externa (instanciar modelo, etc.)
-        onTimeFinished?.Invoke();
+         // Llama a la función externa (instanciar modelo, etc.)
+         onTimeFinished?.Invoke();
     }
 
     public void SetTime(float seconds)

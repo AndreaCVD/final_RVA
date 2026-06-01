@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 5807300642971680349}
   - component: {fileID: 867118645414922778}
   - component: {fileID: 4287430209962531252}
+  - component: {fileID: 5285583735540892919}
   m_Layer: 0
   m_Name: PizzaBox
   m_TagString: Untagged
@@ -348,6 +349,19 @@ MonoBehaviour:
   m_SocketScaleMode: 0
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
+--- !u!114 &5285583735540892919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6585704238012568875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcd49361deb1f4c49bb9f8123075c637, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  compare: {fileID: 0}
 --- !u!1 &7687599599325197475
 GameObject:
   m_ObjectHideFlags: 0

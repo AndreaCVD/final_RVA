@@ -31,7 +31,6 @@ public class InGameMenu : MonoBehaviour
         showOverlay_Libro.action.performed += TogglePause_Libro;
         showOverlay_Libro.action.Enable();
 
-
         showOverlay_Ticket_carbonara.action.performed += TogglePause_Ticket;
         showOverlay_Ticket_carbonara.action.Enable();
 

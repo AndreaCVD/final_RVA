@@ -31,6 +31,9 @@ public class RatHandicap : MonoBehaviour, IHandicap
     private MeshRenderer mesh_renderer;
     private Coroutine flash_coroutine;
 
+    [Header("Audio")]
+    [SerializeField] private AudioClip hitClip;
+
     private void Awake()
     {
         hits_required = Random.Range(min_hits, max_hits + 1);
@@ -122,9 +125,23 @@ public class RatHandicap : MonoBehaviour, IHandicap
         if (resolved) return;
         if (collision.gameObject.CompareTag(hit_tag))
         {
+            //current_hits++;
+            //Debug.Log($"Rat hit! {current_hits}/{hits_required}");
+            //FlashRed();
+            //if (current_hits >= hits_required)
+            //    Resolve();
+
+            if (hitAudio != null)
+                AudioSource.PlayClipAtPoint(
+                hitClip,
+                transform.position
+                );
+
             current_hits++;
             Debug.Log($"Rat hit! {current_hits}/{hits_required}");
+
             FlashRed();
+
             if (current_hits >= hits_required)
                 Resolve();
         }

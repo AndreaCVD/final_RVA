@@ -115,14 +115,14 @@ public class MainLoop : MonoBehaviour
         Scene active_scene = SceneManager.GetActiveScene();
         switch (active_scene.name)
         {
-            case "Aina": // aina tiene que ser la escena, nivel uno
+            case "Aina": // Nombre scena, nivel uno
                 Debug.Log("Estamos en escena: " + active_scene.name);
                 audio_manager.StartDialog(0);
                 duration = audio_manager.ReturnDuration(0);
                 //Debug.Log("Duracion = " + duration);
 
                 break;
-            case "Intento_Implementacio_01": // andrea tiene que ser la escena, nivel dos
+            case "Intento_Implementacio_01": // tiene que ser la escena, nivel dos
                 Debug.Log("Estamos en escena: " + active_scene.name);
                 audio_manager.StartDialog(0);
                 duration = audio_manager.ReturnDuration(0);

@@ -7,13 +7,25 @@ public class NPCController : MonoBehaviour
     public Transform commandDisplay;
     public float slotSpacing = 0.3f;
 
+    private NPC_AudioRandom npcAudio;
+
     [HideInInspector] public List<string> currentOrder = new List<string>();
+
+    private void Awake()
+    {
+        npcAudio = GetComponent<NPC_AudioRandom>();
+    }
 
     // LevelController crida això en el moment del spawn
     public void SetOrder(Recipe recipe, List<GameObject> prefabs)
     {
         currentOrder = new List<string>(recipe.ingredients);
         DisplayOrder(prefabs);
+
+        if (npcAudio != null)
+        {
+            npcAudio.PlayRandomAudio();
+        }
     }
 
     void DisplayOrder(List<GameObject> prefabs)

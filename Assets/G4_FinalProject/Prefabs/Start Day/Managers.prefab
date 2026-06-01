@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1267788114838582461}
   - component: {fileID: 5930315153254723668}
   - component: {fileID: 2402396458465717942}
+  - component: {fileID: 3168700122418085523}
   m_Layer: 0
   m_Name: LevelController
   m_TagString: Untagged
@@ -72,6 +73,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 447d8c589bcdcf64598746f17021a58e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  socket: {fileID: 0}
+  maxPointsPerPizza: 100
+  orderManager: {fileID: 0}
+--- !u!114 &3168700122418085523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4763529136726787159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a1fe8de6fc35184d949aee1127c5600, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelTimer: {fileID: 0}
+  min_spawn_delay: 3
+  max_spawn_delay: 8
+  max_handicaps_per_order: 2
 --- !u!1 &7314219045893330002
 GameObject:
   m_ObjectHideFlags: 0

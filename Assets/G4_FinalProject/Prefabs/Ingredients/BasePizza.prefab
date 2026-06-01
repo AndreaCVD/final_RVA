@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3477920776464647164}
   - component: {fileID: 1338111073926684363}
   - component: {fileID: 4160415773589449993}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BasePizza
   m_TagString: Pizza
   m_Icon: {fileID: 0}
@@ -314,7 +314,7 @@ GameObject:
   - component: {fileID: 4472500080609954127}
   - component: {fileID: 7578824789439351765}
   - component: {fileID: 5552514017453463072}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PizzaSocket
   m_TagString: Pizza
   m_Icon: {fileID: 0}
@@ -379,7 +379,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 227151751729694667}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Attach
   m_TagString: Untagged
   m_Icon: {fileID: 0}

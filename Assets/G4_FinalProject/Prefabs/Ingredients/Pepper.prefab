@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1503610163988645335}
   - component: {fileID: 3691001382596587805}
   m_Layer: 0
-  m_Name: peper grinder
+  m_Name: Pepper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

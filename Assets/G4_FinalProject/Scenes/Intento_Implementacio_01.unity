@@ -4350,27 +4350,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 763522a439f36ac4d881f5652181a2ee, type: 3}
---- !u!1 &807327180 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4763529136726787159, guid: e4887f6c20384a549996ccb539532407, type: 3}
-  m_PrefabInstance: {fileID: 1825980694}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &807327182
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 807327180}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a1fe8de6fc35184d949aee1127c5600, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  levelTimer: {fileID: 1794816780}
-  min_spawn_delay: 3
-  max_spawn_delay: 8
-  max_handicaps_per_order: 2
 --- !u!1001 &807808485
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6664,6 +6643,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2352776182437191852, guid: 447a4db4df714f24e8314d3d4212ced7, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4287430209962531252, guid: 447a4db4df714f24e8314d3d4212ced7, type: 3}
       propertyPath: m_AttachTransform
       value: 
@@ -6698,7 +6681,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5777783727794311057, guid: 447a4db4df714f24e8314d3d4212ced7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.628
+      value: -7.264
       objectReference: {fileID: 0}
     - target: {fileID: 5777783727794311057, guid: 447a4db4df714f24e8314d3d4212ced7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6747,6 +6730,14 @@ PrefabInstance:
     - target: {fileID: 6585704238012568875, guid: 447a4db4df714f24e8314d3d4212ced7, type: 3}
       propertyPath: m_Name
       value: PizzaBox
+      objectReference: {fileID: 0}
+    - target: {fileID: 6585704238012568875, guid: 447a4db4df714f24e8314d3d4212ced7, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7687599599325197475, guid: 447a4db4df714f24e8314d3d4212ced7, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9316,6 +9307,10 @@ PrefabInstance:
       propertyPath: socket
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3168700122418085523, guid: e4887f6c20384a549996ccb539532407, type: 3}
+      propertyPath: levelTimer
+      value: 
+      objectReference: {fileID: 1794816780}
     - target: {fileID: 3957002569417423044, guid: e4887f6c20384a549996ccb539532407, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.860526
@@ -9403,10 +9398,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4763529136726787159, guid: e4887f6c20384a549996ccb539532407, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 807327182}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4887f6c20384a549996ccb539532407, type: 3}
 --- !u!1 &1863207996
 GameObject:
@@ -11856,7 +11848,7 @@ GameObject:
   - component: {fileID: 3477920775098367689}
   - component: {fileID: 1338111074707874814}
   - component: {fileID: 4160415772741144636}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: BasePizza
   m_TagString: Pizza
   m_Icon: {fileID: 0}
@@ -13502,7 +13494,7 @@ GameObject:
   - component: {fileID: 4472500081911247994}
   - component: {fileID: 7578824788138079968}
   - component: {fileID: 5552514018282892053}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: PizzaSocket
   m_TagString: Pizza
   m_Icon: {fileID: 0}
@@ -15259,7 +15251,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 227151753028893438}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Attach
   m_TagString: Untagged
   m_Icon: {fileID: 0}

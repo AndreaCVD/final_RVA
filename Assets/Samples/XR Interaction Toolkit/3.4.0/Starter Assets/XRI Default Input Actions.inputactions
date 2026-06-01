@@ -453,6 +453,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "X Libro",
+                    "type": "Button",
+                    "id": "ead38e0e-da3f-4350-aa3a-98d3f52a905b",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Y Ticket",
+                    "type": "Button",
+                    "id": "e7f4293d-7aae-4f4e-8ebb-68067a480219",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -860,6 +878,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Thumbstick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5c1cb741-c78f-4c2b-9801-79fa772bc9cd",
+                    "path": "<XRSimulatedController>{LeftHand}/primaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "X Libro",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fa6f168d-3ede-4a88-8255-7148bc0565c1",
+                    "path": "<XRSimulatedController>{LeftHand}/secondaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Y Ticket",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

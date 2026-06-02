@@ -459,6 +459,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2064585217}
     m_Modifications:
+    - target: {fileID: 82346650365091015, guid: a6f77863d945e004aaaf6ba831c62f26, type: 3}
+      propertyPath: m_Name
+      value: img_parmigiano
+      objectReference: {fileID: 0}
+    - target: {fileID: 1148005086003665225, guid: a6f77863d945e004aaaf6ba831c62f26, type: 3}
+      propertyPath: m_Name
+      value: img_gorgonzola
+      objectReference: {fileID: 0}
+    - target: {fileID: 5053527051860925009, guid: a6f77863d945e004aaaf6ba831c62f26, type: 3}
+      propertyPath: m_Name
+      value: img_pomodoro
+      objectReference: {fileID: 0}
+    - target: {fileID: 6893480476103395159, guid: a6f77863d945e004aaaf6ba831c62f26, type: 3}
+      propertyPath: m_Name
+      value: img_mozzarella
+      objectReference: {fileID: 0}
     - target: {fileID: 7750219804090605283, guid: a6f77863d945e004aaaf6ba831c62f26, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -541,7 +557,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7927082532044563290, guid: a6f77863d945e004aaaf6ba831c62f26, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8821899382890945909, guid: a6f77863d945e004aaaf6ba831c62f26, type: 3}
+      propertyPath: m_Name
+      value: img_fontina
       objectReference: {fileID: 0}
     - target: {fileID: 8993131592499828244, guid: a6f77863d945e004aaaf6ba831c62f26, type: 3}
       propertyPath: m_Name
@@ -560,6 +580,11 @@ RectTransform:
 --- !u!1 &24297397 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7927082532044563290, guid: a6f77863d945e004aaaf6ba831c62f26, type: 3}
+  m_PrefabInstance: {fileID: 24297395}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &24297398 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5053527051860925009, guid: a6f77863d945e004aaaf6ba831c62f26, type: 3}
   m_PrefabInstance: {fileID: 24297395}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &27964548
@@ -1134,20 +1159,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 662013735867170251, guid: 59f62e5ab55b9874f9b678433bf3b681, type: 3}
   m_PrefabInstance: {fileID: 77398606}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &104747582
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc1515ab76e54f068e2f2207940fab32, type: 3}
-  m_Name: XRI Left/Y Ticket
-  m_EditorClassIdentifier: 
-  m_Asset: {fileID: -944628639613478452, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  m_ActionId: e7f4293d-7aae-4f4e-8ebb-68067a480219
 --- !u!1 &117155318
 GameObject:
   m_ObjectHideFlags: 0
@@ -1599,6 +1610,20 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d5e2343f7ddff04d999262cc132da84, type: 3}
+--- !u!114 &196073200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc1515ab76e54f068e2f2207940fab32, type: 3}
+  m_Name: XRI Left/Y Ticket
+  m_EditorClassIdentifier: 
+  m_Asset: {fileID: -944628639613478452, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  m_ActionId: e7f4293d-7aae-4f4e-8ebb-68067a480219
 --- !u!4 &228986746 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8b7f8ca0715e18d4ea99212d6340f510, type: 3}
@@ -3774,20 +3799,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &637895567
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc1515ab76e54f068e2f2207940fab32, type: 3}
-  m_Name: XRI Left/X Libro
-  m_EditorClassIdentifier: 
-  m_Asset: {fileID: -944628639613478452, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  m_ActionId: ead38e0e-da3f-4350-aa3a-98d3f52a905b
 --- !u!1 &641128586
 GameObject:
   m_ObjectHideFlags: 0
@@ -4684,6 +4695,20 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 1865056248366311061, guid: c60e7b9faaf11024985888cb45f6058a, type: 3}
+--- !u!114 &808084040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc1515ab76e54f068e2f2207940fab32, type: 3}
+  m_Name: XRI Left/X Libro
+  m_EditorClassIdentifier: 
+  m_Asset: {fileID: -944628639613478452, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  m_ActionId: ead38e0e-da3f-4350-aa3a-98d3f52a905b
 --- !u!1 &818228560
 GameObject:
   m_ObjectHideFlags: 0
@@ -5760,20 +5785,6 @@ MonoBehaviour:
   - {fileID: 1865056248366311061, guid: c60e7b9faaf11024985888cb45f6058a, type: 3}
   - {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
   - {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &987904179
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc1515ab76e54f068e2f2207940fab32, type: 3}
-  m_Name: XRI Left/Y Ticket
-  m_EditorClassIdentifier: 
-  m_Asset: {fileID: -944628639613478452, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  m_ActionId: e7f4293d-7aae-4f4e-8ebb-68067a480219
 --- !u!1 &991581063
 GameObject:
   m_ObjectHideFlags: 0
@@ -10472,20 +10483,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8107108474755245983, guid: 49e2fbde9521b4341879174df5a51b64, type: 3}
   m_PrefabInstance: {fileID: 1919268069}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1976216124
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc1515ab76e54f068e2f2207940fab32, type: 3}
-  m_Name: XRI Left/Y Ticket
-  m_EditorClassIdentifier: 
-  m_Asset: {fileID: -944628639613478452, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  m_ActionId: e7f4293d-7aae-4f4e-8ebb-68067a480219
 --- !u!1 &1991791392
 GameObject:
   m_ObjectHideFlags: 0
@@ -10971,20 +10968,6 @@ Transform:
   - {fileID: 165421224}
   m_Father: {fileID: 2222494742146075754}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2027629536
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc1515ab76e54f068e2f2207940fab32, type: 3}
-  m_Name: XRI Left/Y Ticket
-  m_EditorClassIdentifier: 
-  m_Asset: {fileID: -944628639613478452, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  m_ActionId: e7f4293d-7aae-4f4e-8ebb-68067a480219
 --- !u!1001 &2032130697
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11310,6 +11293,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2064585217}
   - component: {fileID: 2064585218}
+  - component: {fileID: 2064585219}
   m_Layer: 0
   m_Name: UI
   m_TagString: Untagged
@@ -11355,12 +11339,45 @@ MonoBehaviour:
   overlayTicket_quesos: {fileID: 24297397}
   overlayTicket_jamon: {fileID: 2032130699}
   overlayTicket_margarita: {fileID: 1295391679}
-  showOverlay_Libro: {fileID: 637895567}
-  showOverlay_Ticket_carbonara: {fileID: 104747582}
-  showOverlay_Ticket_quesos: {fileID: 987904179}
-  showOverlay_Ticket_jamon: {fileID: 2027629536}
-  showOverlay_Ticket_margarita: {fileID: 1976216124}
+  showOverlay_Libro: {fileID: 808084040}
+  showOverlay_Ticket_carbonara: {fileID: 196073200}
+  showOverlay_Ticket_quesos: {fileID: 196073200}
+  showOverlay_Ticket_jamon: {fileID: 196073200}
+  showOverlay_Ticket_margarita: {fileID: 196073200}
   pizza: {fileID: 1825980696}
+--- !u!114 &2064585219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2064585216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c090a1c87e41fe4c8b0a9f984cbcdd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Tomatoe: {fileID: 0}
+  levelController: {fileID: 0}
+  check: {fileID: 0}
+  Pomodoro:
+  - {fileID: 24297398}
+  Gorgonzola: []
+  Mozzarella:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  Parmigiano:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  Fontina:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1001 &2069423962
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16829,6 +16846,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredients: []
+  ticket: {fileID: 0}
 --- !u!1 &5572581853516922067
 GameObject:
   m_ObjectHideFlags: 0

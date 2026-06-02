@@ -8,12 +8,25 @@ public class PizzaAttach : MonoBehaviour
 {
     // PUBLIC LIST - Stores all attached ingredients
     public List<GameObject> ingredients = new List<GameObject>();
+    public TickTicket ticket;
 
+    private void Update()
+    {
+        if (ticket == null)
+        {
+            GameObject a = GameObject.Find("UI");
+            ticket = a.GetComponent<TickTicket>();
+        }
+
+    }
     void OnTriggerEnter(Collider other)
     {
         // Check if the object has the "Ingredient" tag
         if (other.CompareTag("Ingredient"))
         {
+            //Decirle al ticket que se ha añandido
+
+            //Attach ingredient
             GameObject ingredient = other.gameObject;
             AttachIngredient(ingredient);
 

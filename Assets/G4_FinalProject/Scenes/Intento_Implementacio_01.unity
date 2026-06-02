@@ -459,6 +459,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2064585217}
     m_Modifications:
+    - target: {fileID: 82346650365091015, guid: a6f77863d945e004aaaf6ba831c62f26, type: 3}
+      propertyPath: m_Name
+      value: img_parmigiano
+      objectReference: {fileID: 0}
+    - target: {fileID: 1148005086003665225, guid: a6f77863d945e004aaaf6ba831c62f26, type: 3}
+      propertyPath: m_Name
+      value: img_gorgonzola
+      objectReference: {fileID: 0}
+    - target: {fileID: 5053527051860925009, guid: a6f77863d945e004aaaf6ba831c62f26, type: 3}
+      propertyPath: m_Name
+      value: img_pomodoro
+      objectReference: {fileID: 0}
+    - target: {fileID: 6893480476103395159, guid: a6f77863d945e004aaaf6ba831c62f26, type: 3}
+      propertyPath: m_Name
+      value: img_mozzarella
+      objectReference: {fileID: 0}
     - target: {fileID: 7750219804090605283, guid: a6f77863d945e004aaaf6ba831c62f26, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -541,7 +557,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7927082532044563290, guid: a6f77863d945e004aaaf6ba831c62f26, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8821899382890945909, guid: a6f77863d945e004aaaf6ba831c62f26, type: 3}
+      propertyPath: m_Name
+      value: img_fontina
       objectReference: {fileID: 0}
     - target: {fileID: 8993131592499828244, guid: a6f77863d945e004aaaf6ba831c62f26, type: 3}
       propertyPath: m_Name
@@ -560,6 +580,11 @@ RectTransform:
 --- !u!1 &24297397 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7927082532044563290, guid: a6f77863d945e004aaaf6ba831c62f26, type: 3}
+  m_PrefabInstance: {fileID: 24297395}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &24297398 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5053527051860925009, guid: a6f77863d945e004aaaf6ba831c62f26, type: 3}
   m_PrefabInstance: {fileID: 24297395}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &27964548
@@ -11214,6 +11239,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2064585217}
   - component: {fileID: 2064585218}
+  - component: {fileID: 2064585219}
   m_Layer: 0
   m_Name: UI
   m_TagString: Untagged
@@ -11265,6 +11291,39 @@ MonoBehaviour:
   showOverlay_Ticket_jamon: {fileID: 196073200}
   showOverlay_Ticket_margarita: {fileID: 196073200}
   pizza: {fileID: 1825980696}
+--- !u!114 &2064585219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2064585216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c090a1c87e41fe4c8b0a9f984cbcdd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Tomatoe: {fileID: 0}
+  levelController: {fileID: 0}
+  check: {fileID: 0}
+  Pomodoro:
+  - {fileID: 24297398}
+  Gorgonzola: []
+  Mozzarella:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  Parmigiano:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  Fontina:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1001 &2069423962
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16733,6 +16792,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredients: []
+  ticket: {fileID: 0}
 --- !u!1 &5572581853516922067
 GameObject:
   m_ObjectHideFlags: 0

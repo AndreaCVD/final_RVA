@@ -43,8 +43,8 @@ public class NPCController : MonoBehaviour
     {
 
         // Debug — ver nombres de prefabs disponibles
-        foreach (var p in prefabs)
-            Debug.Log($"Prefab disponible: '{p.name}'");
+        //foreach (var p in prefabs)
+        //    Debug.Log($"Prefab disponible: '{p.name}'");
 
         foreach (Transform child in commandDisplay)
             Destroy(child.gameObject);

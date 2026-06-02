@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 361d61ff3c4020b4e99c016a3185336e, type: 3}
   m_Name: Margharita
   m_EditorClassIdentifier: 
-  recipeName: 
+  recipeName: Margarita
   ingredients:
   - TomatoeSauce
   - MOzarella

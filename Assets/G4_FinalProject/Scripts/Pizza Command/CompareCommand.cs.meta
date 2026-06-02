@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 447d8c589bcdcf64598746f17021a58e
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - socket: {instanceID: 0}
+  - orderManager: {instanceID: 0}
+  - pizzaEntregadaClip: {fileID: 8300000, guid: 4af98c4b8e60a4f41a5404c43cdb9fb4, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

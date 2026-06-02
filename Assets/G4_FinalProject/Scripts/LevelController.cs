@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class LevelController : MonoBehaviour
 {
+    public Recipe recetaActual;
+
     [Header("Configuració del nivell")]
     public float timePerNPC = 30f;
     public int totalNPCs = 5;
@@ -40,7 +42,7 @@ public class LevelController : MonoBehaviour
         StartCoroutine(WaitForBlindsAndSpawn());
     }
 
-    public void SpawnNextNPC()
+    public void SpawnNextNPC() 
     {
         if (npcSpawnedCount >= totalNPCs)
         {
@@ -50,6 +52,7 @@ public class LevelController : MonoBehaviour
 
         // Instancia el NPC al spawnPoint
         GameObject npcObject = Instantiate(npcPrefab, spawnPoint.position, spawnPoint.rotation);
+        npcObject.name = "CLIENTE";
         currentNPC = npcObject.GetComponent<NPCController>();
 
         // Assigna CommandDisplay (referència de l'escena)
@@ -57,12 +60,18 @@ public class LevelController : MonoBehaviour
 
         // Assigna la comanda + prefabs
         Recipe recipe = GetRandomRecipe();
+
+        //Debug.Log($"Recipe obtenida: {recipe?.recipeName}");  // llega aqui
+        //Debug.Log($"Ingredients count: {recipe?.ingredients?.Count}");
+        //Debug.Log($"Ingredients: {string.Join(", ", recipe?.ingredients ?? new List<string>())}");
+
         if (recipe != null)
             currentNPC.SetOrder(recipe, ingredientPrefabs);
         else
             Debug.LogWarning("No hi ha receptes disponibles al LevelController!");
 
         npcSpawnedCount++;
+        recetaActual = recipe;
         Debug.Log($"NPC {npcSpawnedCount}/{totalNPCs} spawnejat amb recepta: {recipe?.recipeName}");
 
         //Comenzar el timer
@@ -88,11 +97,24 @@ public class LevelController : MonoBehaviour
     }
 
     // --- Cridat pel Timer o Validació quan el NPC marxa ---
-    public void OnClientDismissed()
+    public void OnClientDismissed() //
     {
         if (currentNPC != null)
-            currentNPC.DismissClient();
+            currentNPC.DismissClient(); //aquest va a NPC controller - enable false
 
-        SpawnNextNPC(); // entra el seguent
+        SpawnNextNPC(); // busca un npc (activo), y instancia uno nuevo si no
     }
+
+    public void DismissCurrentAndSpawnNext()
+    {
+        if (currentNPC != null)
+        {
+            currentNPC.StartDismiss(() => SpawnNextNPC()); // spawn DESPUÉS del destroy
+        }
+        else
+        {
+            SpawnNextNPC();
+        }
+    }
+
 }

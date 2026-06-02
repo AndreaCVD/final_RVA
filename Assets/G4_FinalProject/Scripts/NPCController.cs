@@ -115,7 +115,7 @@ public class NPCController : MonoBehaviour
                   $"IsName(dismiss): {animator.GetCurrentAnimatorStateInfo(0).IsName("dismiss")}");
 
         // Espera máximo X segundos en lugar de depender del nombre del estado
-        float timeout = 1f;
+        float timeout = 2f;
         float elapsed = 0f;
 
         // Espera a que ENTRE en un estado con dismiss (tag o nombre)

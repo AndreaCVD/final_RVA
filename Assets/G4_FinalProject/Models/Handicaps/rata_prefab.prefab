@@ -149,3 +149,4 @@ MonoBehaviour:
   roam_area_size: {x: 2.5, y: 0, z: 1}
   hit_flash_color: {r: 1, g: 0, b: 0, a: 1}
   hit_flash_duration: 0.1
+  hitClip: {fileID: 8300000, guid: aef83823982644748b63da57f8e5afbb, type: 3}

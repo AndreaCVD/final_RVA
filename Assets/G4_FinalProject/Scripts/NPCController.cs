@@ -7,7 +7,14 @@ public class NPCController : MonoBehaviour
     public Transform commandDisplay;
     public float slotSpacing = 0.3f;
 
+    private NPC_AudioRandom_new npcAudio;
+
     [HideInInspector] public List<string> currentOrder = new List<string>();
+
+    private void Awake()
+    {
+        npcAudio = GetComponent<NPC_AudioRandom_new>();
+    }
 
     // LevelController crida això en el moment del spawn
     public void SetOrder(Recipe recipe, List<GameObject> prefabs)
@@ -16,6 +23,17 @@ public class NPCController : MonoBehaviour
         //DebugLog recipe
         currentOrder = new List<string>(recipe.ingredients);
         DisplayOrder(prefabs);
+
+        if (npcAudio != null)
+        {
+            npcAudio.PlayRandomAudio();
+
+        }
+        else
+        {
+            Debug.Log("No agafa npc audio");           
+                
+        }
     }
 
     void DisplayOrder(List<GameObject> prefabs) //no hace nada???

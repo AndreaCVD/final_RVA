@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6586648147768487598}
   - component: {fileID: 3583873102573965426}
   - component: {fileID: 1388904378934594694}
+  - component: {fileID: 6653041190063134865}
   m_Layer: 0
   m_Name: NPC_client
   m_TagString: Untagged
@@ -194,6 +195,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &6653041190063134865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 741922676904854778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b774753b45ab9d4e9ea9d9f8ba72639, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clips:
+  - {fileID: 8300000, guid: 6d450ed29a1274bd996fe4dd040b0b5d, type: 3}
+  - {fileID: 8300000, guid: b2e67ebdb0f2745b8822e878d3ef0075, type: 3}
+  - {fileID: 8300000, guid: fca8128d517864182b94bd76bb0542b8, type: 3}
 --- !u!1 &7698307418474231611
 GameObject:
   m_ObjectHideFlags: 0

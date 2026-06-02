@@ -4,8 +4,8 @@ using UnityEngine;
 public class TickTicket : MonoBehaviour
 {
     //refrenecia a Images
-    public Sprite Tomatoe
-
+    public Sprite Tomatoe;
+    [SerializeField] PizzaAttach pizzaAttach;
 
     void RevisarTicks(ingrediente)
     {
@@ -19,5 +19,5 @@ public class TickTicket : MonoBehaviour
         //image con esa nombre cambio a imagetick
 
 
+        //}
     }
-}

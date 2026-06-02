@@ -9916,6 +9916,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 508154557}
     - target: {fileID: 5930315153254723668, guid: e4887f6c20384a549996ccb539532407, type: 3}
+      propertyPath: timePerNPC
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 5930315153254723668, guid: e4887f6c20384a549996ccb539532407, type: 3}
       propertyPath: commandDisplay
       value: 
       objectReference: {fileID: 508154556}
@@ -11543,7 +11547,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

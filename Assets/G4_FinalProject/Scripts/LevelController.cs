@@ -60,6 +60,11 @@ public class LevelController : MonoBehaviour
 
         // Assigna la comanda + prefabs
         Recipe recipe = GetRandomRecipe();
+
+        //Debug.Log($"Recipe obtenida: {recipe?.recipeName}");  // llega aqui
+        //Debug.Log($"Ingredients count: {recipe?.ingredients?.Count}");
+        //Debug.Log($"Ingredients: {string.Join(", ", recipe?.ingredients ?? new List<string>())}");
+
         if (recipe != null)
             currentNPC.SetOrder(recipe, ingredientPrefabs);
         else

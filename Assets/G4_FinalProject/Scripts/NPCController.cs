@@ -22,22 +22,30 @@ public class NPCController : MonoBehaviour
         //Aqui pasa el recipe i puede llamar a Ticket para hacer display ticket
         //DebugLog recipe
         currentOrder = new List<string>(recipe.ingredients);
+
+        //Debug.Log(string.Join(", ", currentOrder));
+
         DisplayOrder(prefabs);
 
-        if (npcAudio != null)
-        {
-            npcAudio.PlayRandomAudio();
+        //if (npcAudio != null)
+        //{
+        //    npcAudio.PlayRandomAudio();
 
-        }
-        else
-        {
-            Debug.Log("No agafa npc audio");           
+        //}
+        //else
+        //{
+        //    Debug.Log("No agafa npc audio");           
                 
-        }
+        //}
     }
 
     void DisplayOrder(List<GameObject> prefabs) //no hace nada???
     {
+
+        // Debug — ver nombres de prefabs disponibles
+        foreach (var p in prefabs)
+            Debug.Log($"Prefab disponible: '{p.name}'");
+
         foreach (Transform child in commandDisplay)
             Destroy(child.gameObject);
 

@@ -9908,7 +9908,7 @@ PrefabInstance:
       objectReference: {fileID: 508154556}
     - target: {fileID: 5930315153254723668, guid: e4887f6c20384a549996ccb539532407, type: 3}
       propertyPath: blindsAnimationDuration
-      value: 1.5
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 5930315153254723668, guid: e4887f6c20384a549996ccb539532407, type: 3}
       propertyPath: availableRecipes.Array.size
@@ -9916,7 +9916,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5930315153254723668, guid: e4887f6c20384a549996ccb539532407, type: 3}
       propertyPath: ingredientPrefabs.Array.size
-      value: 4
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5930315153254723668, guid: e4887f6c20384a549996ccb539532407, type: 3}
       propertyPath: 'availableRecipes.Array.data[2]'
@@ -9933,15 +9933,35 @@ PrefabInstance:
     - target: {fileID: 5930315153254723668, guid: e4887f6c20384a549996ccb539532407, type: 3}
       propertyPath: 'ingredientPrefabs.Array.data[1]'
       value: 
-      objectReference: {fileID: 4498937629181692510, guid: b44f0813654a8f54e8be345041437ee8, type: 3}
+      objectReference: {fileID: 536406767851171160, guid: 52573964201efb3489c0295b08036411, type: 3}
     - target: {fileID: 5930315153254723668, guid: e4887f6c20384a549996ccb539532407, type: 3}
       propertyPath: 'ingredientPrefabs.Array.data[2]'
       value: 
-      objectReference: {fileID: 8202403657623612761, guid: 3502f882e5559a34d80da64849b9667e, type: 3}
+      objectReference: {fileID: 8299803350555569790, guid: b0fd3db511a098442bf93f0c1e1d6d76, type: 3}
     - target: {fileID: 5930315153254723668, guid: e4887f6c20384a549996ccb539532407, type: 3}
       propertyPath: 'ingredientPrefabs.Array.data[3]'
       value: 
-      objectReference: {fileID: 7473176039997788206, guid: c7e83ade8bf5fb0439246f4ce5c27018, type: 3}
+      objectReference: {fileID: 8022242527594445777, guid: 67099ea076124d64fb915e41c338b78c, type: 3}
+    - target: {fileID: 5930315153254723668, guid: e4887f6c20384a549996ccb539532407, type: 3}
+      propertyPath: 'ingredientPrefabs.Array.data[4]'
+      value: 
+      objectReference: {fileID: 935637093894413835, guid: 8c84d081dfd44be4c9ac2a05fd7e3de0, type: 3}
+    - target: {fileID: 5930315153254723668, guid: e4887f6c20384a549996ccb539532407, type: 3}
+      propertyPath: 'ingredientPrefabs.Array.data[5]'
+      value: 
+      objectReference: {fileID: 8903444550924648917, guid: 693e2f142b1f2314a93a4b1b093ef2bf, type: 3}
+    - target: {fileID: 5930315153254723668, guid: e4887f6c20384a549996ccb539532407, type: 3}
+      propertyPath: 'ingredientPrefabs.Array.data[6]'
+      value: 
+      objectReference: {fileID: 559437212853063374, guid: 10038669268631541ad47c7a97c0fdb7, type: 3}
+    - target: {fileID: 5930315153254723668, guid: e4887f6c20384a549996ccb539532407, type: 3}
+      propertyPath: 'ingredientPrefabs.Array.data[7]'
+      value: 
+      objectReference: {fileID: 5708326140897727849, guid: 57c166ee3fe0f2247a576a81f0a7b249, type: 3}
+    - target: {fileID: 5930315153254723668, guid: e4887f6c20384a549996ccb539532407, type: 3}
+      propertyPath: 'ingredientPrefabs.Array.data[8]'
+      value: 
+      objectReference: {fileID: 1831400793425309667, guid: 74e0d3a6c1b71bf4ea21cb3fb332b95e, type: 3}
     - target: {fileID: 7314219045893330002, guid: e4887f6c20384a549996ccb539532407, type: 3}
       propertyPath: m_Name
       value: Managers

@@ -8,6 +8,8 @@ public class HandicapOrderManager : MonoBehaviour
     [SerializeField] private float max_spawn_delay = 8f;
     [SerializeField] private int max_handicaps_per_order = 2;
 
+    [SerializeField] private LevelController levelController;
+
     private Coroutine spawn_coroutine;
     private bool order_active = false;
     private int handicaps_spawned = 0;
@@ -69,6 +71,8 @@ public class HandicapOrderManager : MonoBehaviour
         if (spawn_coroutine != null) StopCoroutine(spawn_coroutine);
         HandicapManager.instance.OnOrderDelivered(0);
         Debug.Log("HandicapOrderManager: Order finished (timeout)");
+
+        levelController.DismissCurrentAndSpawnNext();
     }
 
     // Mètode públic perquè el pugui cridar CompareCommand
@@ -81,5 +85,7 @@ public class HandicapOrderManager : MonoBehaviour
         if (spawn_coroutine != null) StopCoroutine(spawn_coroutine);
         // No cridem OnOrderDelivered aquí perquè ja ho ha fet CompareCommand amb els punts reals
         Debug.Log("HandicapOrderManager: Order finished by delivery");
+
+        levelController.DismissCurrentAndSpawnNext();
     }
 }

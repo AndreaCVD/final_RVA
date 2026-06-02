@@ -3070,15 +3070,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3448689580841392572, guid: 0ae4486ee93e9974e97c00904ae421fb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.461
+      value: -8.482
       objectReference: {fileID: 0}
     - target: {fileID: 3448689580841392572, guid: 0ae4486ee93e9974e97c00904ae421fb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.439
+      value: 1.7970093
       objectReference: {fileID: 0}
     - target: {fileID: 3448689580841392572, guid: 0ae4486ee93e9974e97c00904ae421fb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.044835
+      value: -3.114
       objectReference: {fileID: 0}
     - target: {fileID: 5565647733290234179, guid: 0ae4486ee93e9974e97c00904ae421fb, type: 3}
       propertyPath: m_Name
@@ -3092,6 +3092,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.035
       objectReference: {fileID: 0}
+    - target: {fileID: 7825709912304365671, guid: 0ae4486ee93e9974e97c00904ae421fb, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1535260910}
     - target: {fileID: 8187534000214418949, guid: 0ae4486ee93e9974e97c00904ae421fb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.72
@@ -8436,6 +8440,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5922479929321339615, guid: 0bb255b247078e849b1637d7134f8900, type: 3}
   m_PrefabInstance: {fileID: 1534552915}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1535260910 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3663629494374661298, guid: ca3c154179aac964eb3972a5dba76043, type: 3}
+  m_PrefabInstance: {fileID: 1363151065}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1540327258
 GameObject:
   m_ObjectHideFlags: 0
@@ -9850,6 +9859,10 @@ PrefabInstance:
       propertyPath: levelTimer
       value: 
       objectReference: {fileID: 753133996}
+    - target: {fileID: 3168700122418085523, guid: e4887f6c20384a549996ccb539532407, type: 3}
+      propertyPath: levelController
+      value: 
+      objectReference: {fileID: 1825980696}
     - target: {fileID: 3957002569417423044, guid: e4887f6c20384a549996ccb539532407, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.860526

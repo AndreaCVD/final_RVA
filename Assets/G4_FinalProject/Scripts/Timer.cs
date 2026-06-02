@@ -16,6 +16,7 @@ public class Timer : MonoBehaviour
     public float MAX_cuenta;
     public bool time_finished;
     public bool day_started;
+    private bool timeout_handled = false;
 
     [Header("Al acabar el timer")]
     public Animator animator; //este animator es de? 
@@ -80,6 +81,9 @@ public class Timer : MonoBehaviour
 
     private void HandleTimeOut()
     {
+        if (timeout_handled) return;
+        timeout_handled = true;
+
         if (timerText != null)
         {
             timerText.text = "00";
@@ -88,16 +92,19 @@ public class Timer : MonoBehaviour
 
         // Lanza la animación si hay un Animator asignado
         //lee la scene y encuentra al npc
-        if (animator == null)
-        {
-            GameObject npcObject = GameObject.Find("CLIENTE"); 
-            Animator anim = npcObject.GetComponent<Animator>();
-            anim.SetBool("dismiss", true);
-        }
-        else
-        {
-            animator.SetBool("dismiss",true);
-        }
+        //if (animator == null)
+        //{
+        //    GameObject npcObject = GameObject.Find("CLIENTE");
+        //    if (npcObject != null)
+        //    {
+        //        Animator anim = npcObject.GetComponent<Animator>();
+        //        anim.SetBool("dismiss", true);
+        //    }
+        //}
+        //else
+        //{
+        //    animator.SetBool("dismiss",true);
+        //}
 
          // Llama a la función externa (instanciar modelo, etc.)
          onTimeFinished?.Invoke();
@@ -108,6 +115,7 @@ public class Timer : MonoBehaviour
         MAX_cuenta = seconds;
         cuenta_atras = seconds;
         time_finished = false;
+        timeout_handled = false;
         day_started = true;
         barra_contador.fillAmount = 0f;
         UpdateTimerText();

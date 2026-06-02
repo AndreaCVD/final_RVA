@@ -105,4 +105,16 @@ public class LevelController : MonoBehaviour
         SpawnNextNPC(); // busca un npc (activo), y instancia uno nuevo si no
     }
 
+    public void DismissCurrentAndSpawnNext()
+    {
+        if (currentNPC != null)
+        {
+            currentNPC.StartDismiss(() => SpawnNextNPC()); // spawn DESPUÉS del destroy
+        }
+        else
+        {
+            SpawnNextNPC();
+        }
+    }
+
 }

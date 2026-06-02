@@ -102,6 +102,8 @@ public class InGameMenu : MonoBehaviour
     {
         paused = true;
 
+        Debug.Log("Pizza actual: " + pizza.recetaActual.recipeName);
+
         string receta = pizza.recetaActual.recipeName;
         //switch que comprueve el tipo de pizza que se ha pedido y abre el overlay correspontiente
         switch (receta)

@@ -16,6 +16,8 @@ public class PizzaAttach : MonoBehaviour
         {
             GameObject ingredient = other.gameObject;
             AttachIngredient(ingredient);
+
+            //llame al script TickTicket i le pase el nombre del ingrediente
         }
         if(other.CompareTag("SpritePepper")) //nuevo
         {

@@ -12,7 +12,7 @@ public class TickTicket : MonoBehaviour
     [SerializeField] Sprite check;
     //public List<SpriteRenderer> Imagenes = new List<SpriteRenderer>();
 
-    public List<GameObject> Pomodoro = new List<GameObject>();
+    public List<Image> Pomodoro = new List<Image>();
     public List<SpriteRenderer> Gorgonzola = new List<SpriteRenderer>();
     public List<SpriteRenderer> Mozzarella = new List<SpriteRenderer>();
     public List<SpriteRenderer> Parmigiano = new List<SpriteRenderer>();
@@ -49,7 +49,7 @@ public class TickTicket : MonoBehaviour
             case string b when b.Contains("pomodo"):
                 for (int i = 0; i > Pomodoro.Count; i--)
                 {
-                    Image miImagen = Pomodoro[i].GetComponent<Image>();
+                    Pomodoro[i].color = Color.red;
 
                     //Pomodoro[i].sprite = check;
                 }

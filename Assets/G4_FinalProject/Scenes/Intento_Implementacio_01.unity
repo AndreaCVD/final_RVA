@@ -582,11 +582,61 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7927082532044563290, guid: a6f77863d945e004aaaf6ba831c62f26, type: 3}
   m_PrefabInstance: {fileID: 24297395}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &24297398 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5053527051860925009, guid: a6f77863d945e004aaaf6ba831c62f26, type: 3}
+--- !u!114 &24297398 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6351284787996841246, guid: a6f77863d945e004aaaf6ba831c62f26, type: 3}
   m_PrefabInstance: {fileID: 24297395}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &24297399 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5076319474320091225, guid: a6f77863d945e004aaaf6ba831c62f26, type: 3}
+  m_PrefabInstance: {fileID: 24297395}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &24297400 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 506759198788822134, guid: a6f77863d945e004aaaf6ba831c62f26, type: 3}
+  m_PrefabInstance: {fileID: 24297395}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &24297401 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3623224302199182103, guid: a6f77863d945e004aaaf6ba831c62f26, type: 3}
+  m_PrefabInstance: {fileID: 24297395}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &24297402 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6237539004923036759, guid: a6f77863d945e004aaaf6ba831c62f26, type: 3}
+  m_PrefabInstance: {fileID: 24297395}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &27964548
 GameObject:
   m_ObjectHideFlags: 0
@@ -6910,6 +6960,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: overlayTicket_carbonara
       objectReference: {fileID: 0}
+    - target: {fileID: 682021361499994753, guid: 5ad12576d43bf35489b85795df86be8c, type: 3}
+      propertyPath: m_Name
+      value: text_funghi_carb
+      objectReference: {fileID: 0}
+    - target: {fileID: 3424731456511125489, guid: 5ad12576d43bf35489b85795df86be8c, type: 3}
+      propertyPath: m_Name
+      value: text_mozzarella_carb
+      objectReference: {fileID: 0}
     - target: {fileID: 4965391819052829613, guid: 5ad12576d43bf35489b85795df86be8c, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -6993,6 +7051,10 @@ PrefabInstance:
     - target: {fileID: 7059306878298561573, guid: 5ad12576d43bf35489b85795df86be8c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7617019292749528738, guid: 5ad12576d43bf35489b85795df86be8c, type: 3}
+      propertyPath: m_Name
+      value: text_parmigiano_carb+
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11359,25 +11421,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Tomatoe: {fileID: 0}
   levelController: {fileID: 0}
-  check: {fileID: 0}
   Pomodoro:
-  - {fileID: 24297398}
-  Gorgonzola: []
+  - {fileID: 24297402}
+  - {fileID: 24297402}
+  Gorgonzola:
+  - {fileID: 24297401}
+  - {fileID: 24297401}
   Mozzarella:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 24297400}
+  - {fileID: 24297400}
   Parmigiano:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 24297399}
+  - {fileID: 24297399}
   Fontina:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 24297398}
+  - {fileID: 24297398}
 --- !u!1001 &2069423962
 PrefabInstance:
   m_ObjectHideFlags: 0

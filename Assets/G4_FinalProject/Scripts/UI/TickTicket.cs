@@ -1,22 +1,24 @@
 using System.Collections.Generic;
 using System.Drawing;
+using TMPro;
 using UnityEngine;
+using TMPro;
 using UnityEngine.UI;
-using Image = System.Drawing.Image;
+using Color = UnityEngine.Color;
 public class TickTicket : MonoBehaviour
 {
     //refrenecia a Images
     public Sprite Tomatoe;
     [SerializeField] LevelController levelController; //recetaActual
 
-    [SerializeField] Sprite check;
+    //[SerializeField] Sprite check;
     //public List<SpriteRenderer> Imagenes = new List<SpriteRenderer>();
-
-    public List<Image> Pomodoro = new List<Image>();
-    public List<SpriteRenderer> Gorgonzola = new List<SpriteRenderer>();
-    public List<SpriteRenderer> Mozzarella = new List<SpriteRenderer>();
-    public List<SpriteRenderer> Parmigiano = new List<SpriteRenderer>();
-    public List<SpriteRenderer> Fontina = new List<SpriteRenderer>();
+    //[SerializeField] TMP_Text op_fuerza;
+    [SerializeField] List<TMP_Text> Pomodoro = new List<TMP_Text>();
+    [SerializeField] List<TMP_Text> Gorgonzola = new List<TMP_Text>();
+    [SerializeField] List<TMP_Text> Mozzarella = new List<TMP_Text>();
+    [SerializeField] List<TMP_Text> Parmigiano = new List<TMP_Text>();
+    [SerializeField] List<TMP_Text> Fontina = new List<TMP_Text>();
 
     //public List<GameObject> ingredients = new List<GameObject>();
     private void Start()
@@ -44,38 +46,38 @@ public class TickTicket : MonoBehaviour
     }
     private void Tick(string ingrediente)
     {
+        //Color A0 B8 0C --> 160, 184, 012
+        Color verde = new Color(160, 184, 12);
         switch (ingrediente)
         {
             case string b when b.Contains("pomodo"):
                 for (int i = 0; i > Pomodoro.Count; i--)
                 {
-                    Pomodoro[i].color = Color.red;
-
-                    //Pomodoro[i].sprite = check;
+                    Pomodoro[i].color = verde;
                 }
                 break;
             case string b when b.Contains("gorgonzola"):
                 for (int i = 0; i > Gorgonzola.Count; i--)
                 {
-                    Gorgonzola[i].sprite = check;
+                    Gorgonzola[i].color = verde;
                 }
                 break;
             case string b when b.Contains("mozz"):
                 for (int i = 0; i > Mozzarella.Count; i--)
                 {
-                    Mozzarella[i].sprite = check;
+                    Mozzarella[i].color = verde;
                 }
                 break;
             case string b when b.Contains("parmigi"):
                 for (int i = 0; i > Parmigiano.Count; i--)
                 {
-                    Parmigiano[i].sprite = check;
+                    Parmigiano[i].color = verde;
                 }
                 break;
             case string b when b.Contains("fonti"):
                 for (int i = 0; i > Fontina.Count; i--)
                 {
-                    Fontina[i].sprite = check;
+                    Fontina[i].color = verde;
                 }
                 break;
             default:
